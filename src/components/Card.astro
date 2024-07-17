@@ -1,0 +1,21 @@
+---
+const {post} = Astro.props
+const {image, title, tags} = post
+---
+
+<div>
+  <img src={image} alt="">
+  <div>
+    <div class="even-columns">
+      <div class="category">
+        <!-- icon here -->
+         <span>{tags.category}</span>
+      </div>
+      <div class="date">
+        <!-- icon here -->
+        <span>{tags.date}</span>
+      </div>
+    </div>
+    <h4>{title}</h4>
+  </div>
+</div>

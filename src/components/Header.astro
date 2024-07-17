@@ -1,0 +1,118 @@
+---
+import ChevronRight from "../icons/ChevronRight.astro";
+import MenuIcon from "../icons/MenuIcon.astro";
+import CloseIcon from "../icons/CloseIcon.astro";
+import Container from "../layout/Container.astro";
+import Navbar from "./Navbar.astro";
+
+const navbarList = [
+  {
+    label: "Home",
+    link: "#",
+  },
+  {
+    label: "Features",
+    link: "#",
+  },
+  {
+    label: "Service",
+    link: "#",
+  },
+  {
+    label: "Blog",
+    link: "#",
+  },
+  {
+    label: "Newsletter",
+    link: "#",
+  },
+];
+---
+
+<header class="header">
+  <Container>
+    <div class="header-wrapper">
+      <div class="header__logo-container">
+        <a href="#"><img src="/images/logo.svg" alt="Solutry logo" /></a>
+        <button class="btn-toggle">
+          <MenuIcon id="icon-menu" style="width: 25px;" />
+          <CloseIcon id="icon-close" style="width: 25px;" />
+        </button>
+      </div>
+
+      <Navbar />
+
+      <div class="header__btn">
+        <a href="#" class="btn">
+          <span>Get Started</span>
+          <ChevronRight />
+        </a>
+      </div>
+    </div>
+  </Container>
+</header>
+
+<style>
+  .header {
+    margin-block: 1.25rem;
+  }
+
+  .header__logo-container img{
+    width: 8rem;
+  }
+
+  .header-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .btn-toggle {
+    display: none;
+  }
+
+  @media screen and (max-width: 50em) {
+    .header__logo-container {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .btn-toggle {
+      display: block;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding-inline: 0.5em;
+      aspect-ratio: 1;
+
+      #icon-close {
+        display: none;
+      }
+    }
+
+    .btn-toggle.isOpen {
+      #icon-close {
+        display: block;
+      }
+      #icon-menu {
+        display: none;
+      }
+    }
+
+    .header__btn {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  const btnToggle = document.querySelector(".btn-toggle");
+  const navbar = document.querySelector(".navbar");
+
+  btnToggle.addEventListener("click", () => {
+    btnToggle.classList.toggle("isOpen");
+    navbar.classList.toggle("isOpen");
+  });
+</script>

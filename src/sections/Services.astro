@@ -1,0 +1,38 @@
+---
+import Container from "../layout/Container.astro";
+import ServicesContent from "../components/ServicesContent.astro";
+
+const servicesData = {
+  services: {
+    image: "/images/service-1.png",
+    text: "Services We Offer",
+    title: "We are here, to help your startup business",
+    servicesList: [
+      "Cloud Databases",
+      "Website Hosting",
+      "Remote Desktop",
+      "File Backup",
+    ],
+  },
+  ourServices: {
+    image: "/images/service-2.png",
+    text: "Our Services",
+    title: "Best IT & technology service in your area",
+    servicesList: [
+      "Design & Development",
+      "Android Apps Development",
+      "Laravel Web Development",
+      "React Web Development",
+    ],
+  },
+};
+---
+
+<section>
+  <Container>
+    <ServicesContent services={servicesData.services} />
+    <ServicesContent services={servicesData.ourServices} />
+  </Container>
+</section>
+
+<style></style>

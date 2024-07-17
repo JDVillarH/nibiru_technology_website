@@ -1,0 +1,78 @@
+---
+import ChevronRight from "../icons/ChevronRight.astro";
+
+const features = [
+  {
+    img: "/images/features-icon-1.png",
+    title: "Zero Configuration",
+    description:
+      "Lorem ipsum dolor sit amet, conse ctetur adipiscing elit. Sed est non feugiat sagittis.",
+  },
+  {
+    img: "/images/features-icon-2.png",
+    title: "Code Security",
+    description:
+      "Lorem ipsum dolor sit amet, conse ctetur adipiscing elit. Sed est non feugiat sagittis.",
+  },
+  {
+    img: "/images/features-icon-3.png",
+    title: "Team Management",
+    description:
+      "Lorem ipsum dolor sit amet, conse ctetur adipiscing elit. Sed est non feugiat sagittis.",
+  },
+  {
+    img: "/images/features-icon-4.png",
+    title: "Access Controlled",
+    description:
+      "Lorem ipsum dolor sit amet, conse ctetur adipiscing elit. Sed est non feugiat sagittis.",
+  },
+];
+---
+
+<div class="features__content even-columns">
+  {
+    features.map((feature) => {
+      return (
+        <div class="features__card flow">
+          <img src={feature.img} alt="Illustration icon" />
+          <div>
+            <h3 class="heading-3">{feature.title}</h3>
+            <p>{feature.description}</p>
+            <a href="#" class="features__link">
+              <span>Learn More</span>
+              <ChevronRight />
+            </a>
+          </div>
+        </div>
+      );
+    })
+  }
+</div>
+
+<style>
+  .features__content {
+    padding-top: 2rem;
+  }
+
+  .features__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    text-decoration: none;
+
+    color: var(--clr-red-crayola)
+  }
+
+  .features__link:hover {
+    color: var(--clr-black-coral);
+  }
+
+
+  @media screen and (max-width: 50em) {
+    .features__card {
+      text-align: center;
+      display: grid;
+      place-items: center;
+    }
+  }
+</style>

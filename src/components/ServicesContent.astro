@@ -1,0 +1,72 @@
+---
+import CheckIcon from "../icons/CheckIcon.astro";
+
+const { services } = Astro.props;
+
+const {text, title, image, servicesList} = services
+---
+
+<div class="services">
+  <div class="even-columns">
+    <div>
+      <span>{text}</span>
+      <h2 class="heading-2">{title}</h2>
+      <ul class="services__list">
+        {
+          servicesList.map((service) => {
+            return (
+              <li class="services__item">
+                <div class="services__icon">
+                  <CheckIcon />
+                </div>
+                <h4>{service}</h4>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </div>
+    <img src={image} alt="Illustration art" />
+  </div>
+</div>
+
+<style>
+  .services {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--clr-cultured);
+  }
+
+  .services__list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .services__list > *:nth-child(2),
+  .services__list > *:nth-child(4) {
+    margin-left: 2rem;
+  }
+
+  .services__item {
+    background-color: var(--clr-white);
+    margin-top: 1rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .services__icon {
+    background-color: var(--clr-cultured);
+    padding: 0.25rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+  }
+
+  .services__item:hover .services__icon {
+    background-color: var(--clr-red-crayola);
+  }
+
+</style>

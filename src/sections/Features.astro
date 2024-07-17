@@ -1,0 +1,33 @@
+---
+import FeaturesContent from "../components/FeaturesContent.astro";
+import Container from "../layout/Container.astro";
+---
+
+<section id="features" class="padding-block">
+  <Container>
+    <div class="features__container flow" style="--flow-space: 0.5rem;">
+      <span>How Can Help You</span>
+      <h2 class="heading-2">We’re helping teams do their best work</h2>
+
+      <FeaturesContent />
+    </div>
+  </Container>
+</section>
+
+<style>
+  .features__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2 {
+      text-align: center;
+    }
+  }
+
+  
+
+  .features__content {
+    margin-top: 4rem;
+  }
+</style>

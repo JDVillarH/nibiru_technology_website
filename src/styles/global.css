@@ -1,0 +1,157 @@
+/* ========== VARIABLES CSS ========== */
+:root {
+  /* ===== Colors ===== */
+  --clr-space-cadet: hsl(224, 48%, 22%);
+  --clr-red-crayola: hsl(342, 100%, 50%);
+  --clr-black-coral: hsl(219, 13%, 44%);
+  --clr-blue-ryb: hsl(244, 86%, 59%);
+  --clr-cultured: hsl(0, 0%, 96%);
+  --clr-white: hsl(0, 0%, 100%);
+
+  /* ===== Fonts and Typography ===== */
+  --ff-default: 'Bricolage Grotesque Variable', sans-serif;
+
+  --fs-heading-1: 2rem;
+  --fs-heading-2: 1.75rem;
+  --fs-heading-3: 1.5rem;
+  --fs-default: 1rem;
+  --fs-small: 0.875rem;
+  --fs-smaller: 0.625rem;
+
+  /* ===== Weights ===== */
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semi-bold: 600;
+  --fw-bold: 700;
+}
+
+/* ===== Responsive Typography */
+@media screen and (min-width: 50em) {
+  :root {
+    --fs-heading-1: 3rem;
+    --fs-heading-2: 2.5rem;
+    --fs-heading-3: 1.875rem;
+    --fs-default: 1.125rem;
+  }
+}
+
+/* ========== RESET CSS ========== */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+h1, h2, h3 {
+  line-height: 1.2;
+}
+
+a {
+  color: inherit;
+}
+
+/* ========== UTILITY CLASS ========== */
+.heading-1{
+  font-size: var(--fs-heading-1);
+  font-weight: var(--fw-bold);
+  color: var(--clr-space-cadet);
+}
+
+.heading-2{
+  font-size: var(--fs-heading-2);
+  font-weight: var(--fw-semi-bold);
+  color: var(--clr-space-cadet);
+}
+
+.heading-3{
+  font-size: var(--fs-heading-3);
+  font-weight: var(--fw-medium);
+  color: var(--clr-space-cadet);
+}
+
+.flow > *:where(:not(:first-child)) {
+  margin-top: var(--flow-space, 1rem);
+}
+
+.padding-block {
+  padding-block: 3rem;
+}
+
+.flex-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.flex-group > * {
+  min-width: fit-content;
+  flex: 1;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.even-columns {
+  display: grid;
+  gap: 2rem;
+}
+
+@media screen and (min-width: 50em) {
+  .even-columns {
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  text-decoration: none;
+  background-color: var(--clr-blue-ryb);
+  color: var(--clr-white);
+
+  padding-inline: 1rem;
+  padding-block: 0.5rem;
+  border-radius: 0.25rem; 
+}
+
+.btn-primary {
+  padding-inline: 1.25rem;
+  padding-block: 0.625rem;
+  border-radius: 0.25rem; 
+}
+
+/* ========== GENERAL STYLES ========== */
+body {
+  min-height: 100vh;
+
+  font-family: var(--ff-default);
+  font-size: var(--fs-default);
+  font-weight: var(--fw-regular);
+
+  background-color: var(--clr-white);
+  color: var(--clr-black-coral);
+}
