@@ -1,6 +1,6 @@
 ---
 import Container from "../layout/Container.astro";
-import Card from "../components/Card.astro"
+import Card from "../components/Card.astro";
 
 const postsList = [
   {
@@ -8,42 +8,48 @@ const postsList = [
     title: "How is technology working with new things?",
     tags: {
       category: "Technology",
-      date: "25 Feb, 2022"
-    }
+      date: "25 Feb, 2022",
+    },
   },
   {
     image: "/images/blog-2.jpg",
     title: "Top 10 important tips on IT services & design",
     tags: {
       category: "Design",
-      date: "25 Feb, 2022"
-    }
+      date: "25 Feb, 2022",
+    },
   },
   {
     image: "/images/blog-3.jpg",
     title: "How our company works in different ways",
     tags: {
       category: "Startup",
-      date: "25 Feb, 2022"
-    }
+      date: "25 Feb, 2022",
+    },
   },
-]
+];
 ---
 
 <section>
-  <Container>
-    <div>
-      <span>Latest News</span>
-      <h2>Our latest articles & resources</h2>
-      <div class="even-columns">
-        {
-          postsList.map((post) => {
-            return (
-              <Card post={post} />
-            )
-          })
-        }
-      </div>
-    </div>
-  </Container>
+  <p class="text-center">Latest News</p>
+  <h2 class="text-center">Our latest articles & resources</h2>
+  <div class="blog_container">
+    {postsList.map((post) => <Card post={post} />)}
+  </div>
 </section>
+
+<style>
+  section {
+    display: grid;
+    flex-direction: column;
+    width: min(90%, 1280px);
+
+    .blog_container {
+      gap: 2rem;
+      display: grid;
+      justify-content: center;
+      padding: 1.2rem;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 350px));
+    }
+  }
+</style>

@@ -7,6 +7,7 @@
   --clr-blue-ryb: hsl(244, 86%, 59%);
   --clr-cultured: hsl(0, 0%, 96%);
   --clr-white: hsl(0, 0%, 100%);
+  --clr-black: hsl(0, 0%, 0%);
 
   /* ===== Fonts and Typography ===== */
   --ff-default: 'Bricolage Grotesque Variable', sans-serif;
@@ -103,8 +104,9 @@ h3 {
 }
 
 a {
-  text-decoration: none;
   color: inherit;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 ul,
@@ -174,6 +176,8 @@ li {
 }
 
 section {
+  /* Esto es lo mismo que margin-inline: auto; */
+  margin: 0 auto;
   padding-block: var(--section-padding);
 }
 
@@ -210,4 +214,8 @@ body {
 
   background-color: var(--clr-white);
   color: var(--clr-black-coral);
+}
+
+.text-center {
+  text-align: center;
 }
