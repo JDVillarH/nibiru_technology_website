@@ -1,21 +1,85 @@
 ---
-const {post} = Astro.props
-const {image, title, tags} = post
+import TagIcon from "../icons/TagIcon.astro";
+import CalendarIcon from "../icons/CalendarIcon.astro";
+
+const { post } = Astro.props;
+const { image, title, tags } = post;
 ---
 
-<div>
-  <img src={image} alt="">
+<article>
+  <figure>
+    <a target="_blank" rel="noopener noreferrer">
+      <img src={image} alt={title} />
+    </a>
+  </figure>
+
   <div>
-    <div class="even-columns">
-      <div class="category">
-        <!-- icon here -->
-         <span>{tags.category}</span>
-      </div>
-      <div class="date">
-        <!-- icon here -->
+    <ul>
+      <li>
+        <TagIcon />
+        <span>{tags.category}</span>
+      </li>
+      <li>
+        <CalendarIcon />
         <span>{tags.date}</span>
-      </div>
-    </div>
-    <h4>{title}</h4>
+      </li>
+    </ul>
+    <a target="_blank" rel="noopener noreferrer">{title}</a>
   </div>
-</div>
+</article>
+
+<style>
+  article {
+    overflow: hidden;
+    border-radius: 12px;
+    transition: 0.35s ease-in-out;
+    box-shadow: 0 2px 25px 10px rgb(0 0 0 / 10%);
+
+    &:hover img {
+      transform: scale(1.1);
+    }
+
+    figure {
+      overflow: hidden;
+    }
+
+    figure img,
+    figure:hover img,
+    div a,
+    div a:hover {
+      transition: 0.3s ease-in-out;
+    }
+
+    div {
+      gap: 1rem;
+      display: grid;
+      padding: 1.2rem;
+
+      ul {
+        display: flex;
+        justify-content: space-between;
+
+        li {
+          display: flex;
+          align-items: center;
+          gap: 4px;
+        }
+
+        svg {
+          width: 1.3rem;
+          color: var(--clr-red-crayola);
+        }
+      }
+    }
+
+    div a {
+      font-size: 1.2rem;
+      font-weight: var(--fw-bold);
+      color: var(--clr-black);
+
+      &:hover {
+        color: var(--clr-red-crayola);
+      }
+    }
+  }
+</style>
