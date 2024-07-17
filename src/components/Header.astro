@@ -33,10 +33,11 @@ const navbarList = [
   <Container>
     <div class="header-wrapper">
       <div class="header__logo-container">
-        <a href="#"><img src="/images/logo.svg" alt="Solutry logo" /></a>
-        <button class="btn-toggle">
-          <MenuIcon id="icon-menu" style="width: 25px;" />
-          <CloseIcon id="icon-close" style="width: 25px;" />
+        <a href="#">
+          <img src="/images/logo.svg" alt="Solutry logo" loading="lazy" />
+        </a>
+        <button class="hamburger">
+          <span></span>
         </button>
       </div>
 
@@ -54,10 +55,13 @@ const navbarList = [
 
 <style>
   .header {
-    margin-block: 1.25rem;
+    width: 100%;
+    position: fixed;
+    padding-block: 1.25rem;
+    background-color: var(--clr-cultured);
   }
 
-  .header__logo-container img{
+  .header__logo-container img {
     width: 8rem;
   }
 
@@ -67,8 +71,34 @@ const navbarList = [
     justify-content: space-between;
   }
 
-  .btn-toggle {
+  .hamburger {
     display: none;
+    justify-content: center;
+
+    span::before,
+    span::after,
+    span {
+      width: 32px;
+      height: 3px;
+      border-radius: 2px;
+      background-color: var(--clr-black-coral);
+      transition: 0.3s;
+    }
+
+    span::after,
+    span::before {
+      content: "";
+      position: relative;
+      display: inline-block;
+    }
+
+    span::after {
+      top: -26px;
+    }
+
+    span::before {
+      top: -23px;
+    }
   }
 
   @media screen and (max-width: 50em) {
@@ -79,25 +109,23 @@ const navbarList = [
       align-items: center;
     }
 
-    .btn-toggle {
-      display: block;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding-inline: 0.5em;
-      aspect-ratio: 1;
-
-      #icon-close {
-        display: none;
-      }
+    .hamburger {
+      display: flex;
     }
 
-    .btn-toggle.isOpen {
-      #icon-close {
-        display: block;
-      }
-      #icon-menu {
-        display: none;
+    .hamburger.isOpen {
+      span {
+        background-color: transparent;
+
+        &::before {
+          top: -14px;
+          transform: rotate(135deg);
+        }
+
+        &::after {
+          top: -36px;
+          transform: rotate(-135deg);
+        }
       }
     }
 
@@ -108,7 +136,7 @@ const navbarList = [
 </style>
 
 <script>
-  const btnToggle = document.querySelector(".btn-toggle");
+  const btnToggle = document.querySelector(".hamburger");
   const navbar = document.querySelector(".navbar");
 
   btnToggle.addEventListener("click", () => {

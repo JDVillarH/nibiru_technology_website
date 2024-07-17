@@ -3,7 +3,7 @@ import ChevronRight from "../icons/ChevronRight.astro";
 import Container from "../layout/Container.astro";
 ---
 
-<section >
+<section>
   <Container>
     <div class="even-columns items-center">
       <div class="flow">
@@ -17,20 +17,19 @@ import Container from "../layout/Container.astro";
         </p>
         <a href="#" class="btn btn-primary">
           <span>Get Started Now</span>
-          <ChevronRight/>
+          <ChevronRight />
         </a>
       </div>
-      <div>
-        <img src="/images/hero-banner.png" alt="Illustration art" />
-      </div>
+      <figure class="hero-banner">
+        <img src="/images/hero-banner.webp" alt="Illustration art" />
+      </figure>
     </div>
   </Container>
 </section>
 
 <style>
   section {
-    padding-top: 4rem;
-    padding-bottom: 2rem;
+    background-color: var(--clr-cultured);
+    padding-top: 9rem;
   }
-
 </style>

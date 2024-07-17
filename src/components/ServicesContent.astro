@@ -3,7 +3,7 @@ import CheckIcon from "../icons/CheckIcon.astro";
 
 const { services } = Astro.props;
 
-const {text, title, image, servicesList} = services
+const { text, title, image, servicesList } = services;
 ---
 
 <div class="services">
@@ -35,12 +35,6 @@ const {text, title, image, servicesList} = services
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: var(--clr-cultured);
-  }
-
-  .services__list {
-    list-style: none;
-    padding: 0;
   }
 
   .services__list > *:nth-child(2),
@@ -68,5 +62,4 @@ const {text, title, image, servicesList} = services
   .services__item:hover .services__icon {
     background-color: var(--clr-red-crayola);
   }
-
 </style>
