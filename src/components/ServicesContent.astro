@@ -1,13 +1,13 @@
 ---
 import CheckIcon from "../icons/CheckIcon.astro";
 
-const { services } = Astro.props;
+const { services, services__container } = Astro.props;
 
 const {text, title, image, servicesList} = services
 ---
 
-<div class="services">
-  <div class="even-columns">
+
+  <div class="even-columns services__container">
     <div>
       <span>{text}</span>
       <h2 class="heading-2">{title}</h2>
@@ -28,16 +28,9 @@ const {text, title, image, servicesList} = services
     </div>
     <img src={image} alt="Illustration art" />
   </div>
-</div>
+
 
 <style>
-  .services {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: var(--clr-cultured);
-  }
-
   .services__list {
     list-style: none;
     padding: 0;

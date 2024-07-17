@@ -28,11 +28,15 @@ const servicesData = {
 };
 ---
 
-<section>
+<section class="services">
   <Container>
     <ServicesContent services={servicesData.services} />
-    <ServicesContent services={servicesData.ourServices} />
+    <ServicesContent services={servicesData.ourServices} services__container="services__container"/>
   </Container>
 </section>
 
-<style></style>
+<style>
+  .services__container *:nth-child(1){
+    order: 1;
+  }
+</style>
