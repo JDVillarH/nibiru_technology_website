@@ -1,28 +1,7 @@
 ---
 import ChevronRight from "../icons/ChevronRight.astro";
 
-const navbarList = [
-  {
-    label: "Home",
-    link: "#",
-  },
-  {
-    label: "Features",
-    link: "#",
-  },
-  {
-    label: "Service",
-    link: "#",
-  },
-  {
-    label: "Blog",
-    link: "#",
-  },
-  {
-    label: "Newsletter",
-    link: "#",
-  },
-];
+const { navbarList } = Astro.props;
 ---
 
 <nav class="navbar">

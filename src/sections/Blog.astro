@@ -33,23 +33,17 @@ const postsList = [
 <section>
   <p class="text-center">Latest News</p>
   <h2 class="text-center">Our latest articles & resources</h2>
-  <div class="blog_container">
+  <div class="blog_container section_container">
     {postsList.map((post) => <Card post={post} />)}
   </div>
 </section>
 
 <style>
-  section {
+  .blog_container {
+    gap: 2rem;
     display: grid;
-    flex-direction: column;
-    width: min(90%, 1280px);
-
-    .blog_container {
-      gap: 2rem;
-      display: grid;
-      justify-content: center;
-      padding: 1.2rem;
-      grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 350px));
-    }
+    justify-content: center;
+    padding: 1.2rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 350px));
   }
 </style>
