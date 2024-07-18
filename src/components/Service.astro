@@ -2,7 +2,6 @@
 import CheckIcon from "../icons/CheckIcon.astro";
 
 const { services } = Astro.props;
-
 const { text, title, image, servicesList } = services;
 ---
 
@@ -27,7 +26,9 @@ const { text, title, image, servicesList } = services;
       }
     </ul>
   </article>
-  <img src={image} alt={title} />
+  <figure>
+    <img src={image} alt={title} />
+  </figure>
 </div>
 
 <style>
