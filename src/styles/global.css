@@ -242,6 +242,7 @@ section {
 }
 
 .btn-primary {
+  background-color: var(--clr-red-crayola);
   padding-inline: 1.25rem;
   padding-block: 0.625rem;
   border-radius: 0.25rem;
