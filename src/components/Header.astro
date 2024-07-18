@@ -10,50 +10,48 @@ const navbarList = [
   },
   {
     label: "Features",
-    link: "#",
+    link: "#features",
   },
   {
     label: "Service",
-    link: "#",
+    link: "#service",
   },
   {
     label: "Blog",
-    link: "#",
+    link: "#blog",
   },
   {
     label: "Newsletter",
-    link: "#",
+    link: "#newsletter",
   },
 ];
 ---
 
 <header class="header">
-  <Container>
-    <div class="header-wrapper">
-      <div class="header__logo-container">
-        <a href="#">
-          <img
-            class="brand_img"
-            src="/images/logo.svg"
-            alt="Solutry logo"
-            loading="lazy"
-          />
-        </a>
-        <button class="hamburger">
-          <span></span>
-        </button>
-      </div>
-
-      <Navbar navbarList={navbarList} />
-
-      <div class="header__btn">
-        <a href="#" class="btn">
-          <span>Get Started</span>
-          <ChevronRight />
-        </a>
-      </div>
+  <div class="header-wrapper section_container">
+    <div class="header__logo-container">
+      <a href="#">
+        <img
+          class="brand_img"
+          src="/images/logo.svg"
+          alt="Solutry logo"
+          loading="lazy"
+        />
+      </a>
+      <button class="hamburger">
+        <span></span>
+      </button>
     </div>
-  </Container>
+
+    <Navbar navbarList={navbarList} />
+
+    <div class="header__btn">
+      <a href="#" class="btn">
+        <span>Get Started</span>
+        <ChevronRight />
+      </a>
+    </div>
+  </div>
 </header>
 
 <style>

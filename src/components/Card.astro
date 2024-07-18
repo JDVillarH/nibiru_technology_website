@@ -24,7 +24,7 @@ const { image, title, tags } = post;
         <span>{tags.date}</span>
       </li>
     </ul>
-    <a target="_blank" rel="noopener noreferrer">{title}</a>
+    <a class="h3" target="_blank" rel="noopener noreferrer">{title}</a>
   </div>
 </article>
 
@@ -72,14 +72,8 @@ const { image, title, tags } = post;
       }
     }
 
-    div a {
-      font-size: 1.2rem;
-      font-weight: var(--fw-bold);
-      color: var(--clr-black);
-
-      &:hover {
-        color: var(--clr-red-crayola);
-      }
+    div a:hover {
+      color: var(--clr-red-crayola);
     }
   }
 </style>

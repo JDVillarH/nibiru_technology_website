@@ -15,7 +15,7 @@ import PhoneIcon from "../icons/PhoneIcon.astro";
           loading="lazy"
         />
       </a>
-      <p>
+      <p class="paragraph">
         Lorem ipsum dolor sit amet, consectetur, sed do eiusmod tempor
         incididunt ut labore et dolore magna aliqua minim.
       </p>
@@ -29,7 +29,7 @@ import PhoneIcon from "../icons/PhoneIcon.astro";
 
     <div class="quick_links">
       <h3>Quick links</h3>
-      <div>
+      <div class="paragraph">
         <ul>
           <li><a href="#">IT Startup</a></li>
           <li><a href="#">Software</a></li>
@@ -49,7 +49,7 @@ import PhoneIcon from "../icons/PhoneIcon.astro";
 
     <div class="contact_us">
       <h3>Contact with us</h3>
-      <ul>
+      <ul class="paragraph">
         <li>
           <div class="footer_icon rounded_icon_container">
             <EmailIcon />
@@ -110,24 +110,20 @@ import PhoneIcon from "../icons/PhoneIcon.astro";
     .contact_us {
       display: grid;
       flex-direction: column;
-      gap: 1.7rem;
+      gap: 1rem;
     }
 
     .footer_brand {
-      /* Este estilo de parrafo se puede reutilizar en la sección Features */
-      p {
-        color: var(--clr-black-coral);
-        line-height: 1.5;
-      }
-
       .address_container {
         display: flex;
         align-items: center;
         gap: 10px;
 
         address {
-          font-weight: var(--fw-bold);
-          color: var(--clr-black-coral);
+          color: var(--clr-space-cadet);
+          font-size: var(--fs-5);
+          font-weight: var(--fw-semi-bold);
+          line-height: 1.6;
         }
       }
     }
