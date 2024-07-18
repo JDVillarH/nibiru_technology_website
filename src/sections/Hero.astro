@@ -1,30 +1,25 @@
 ---
 import ChevronRight from "../icons/ChevronRight.astro";
-import Container from "../layout/Container.astro";
 ---
 
 <section>
-  <Container>
-    <div class="even-columns items-center">
-      <div class="flow">
-        <h1 class="heading-1">
-          Secure IT solutions for a more secure environment
-        </h1>
-        <p>
-          Velit hendrerit sit auctor tempor sem. Congue mi tempor condimentum
-          felis arcu, non cursus. Nulla pharetra porttitor sed platea arcu et
-          leo odio.
-        </p>
-        <a href="#" class="btn btn-primary">
-          <span>Get Started Now</span>
-          <ChevronRight />
-        </a>
-      </div>
-      <figure class="hero-banner">
-        <img src="/images/hero-banner.webp" alt="Illustration art" />
-      </figure>
+  <div class="even-columns items-center section_container">
+    <div>
+      <h1 class="h1">Secure IT solutions for a more secure environment</h1>
+      <p class="paragraph">
+        Velit hendrerit sit auctor tempor sem. Congue mi tempor condimentum
+        felis arcu, non cursus. Nulla pharetra porttitor sed platea arcu et leo
+        odio.
+      </p>
+      <a href="#" class="btn btn-primary">
+        <span>Get Started Now</span>
+        <ChevronRight />
+      </a>
     </div>
-  </Container>
+    <figure>
+      <img src="/images/hero-banner.webp" alt="Illustration art" />
+    </figure>
+  </div>
 </section>
 
 <style>

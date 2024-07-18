@@ -1,33 +1,60 @@
 ---
-import FeaturesContent from "../components/FeaturesContent.astro";
-import Container from "../layout/Container.astro";
+import Feature from "../components/Feature.astro";
+
+const features = [
+  {
+    image: "/images/features-icon-1.png",
+    title: "Zero Configuration",
+    description:
+      "Lorem ipsum dolor sit amet, conse ctetur adipiscing elit. Sed est non feugiat sagittis.",
+  },
+  {
+    image: "/images/features-icon-2.png",
+    title: "Code Security",
+    description:
+      "Lorem ipsum dolor sit amet, conse ctetur adipiscing elit. Sed est non feugiat sagittis.",
+  },
+  {
+    image: "/images/features-icon-3.png",
+    title: "Team Management",
+    description:
+      "Lorem ipsum dolor sit amet, conse ctetur adipiscing elit. Sed est non feugiat sagittis.",
+  },
+  {
+    image: "/images/features-icon-4.png",
+    title: "Access Controlled",
+    description:
+      "Lorem ipsum dolor sit amet, conse ctetur adipiscing elit. Sed est non feugiat sagittis.",
+  },
+];
 ---
 
-<section id="features">
-  <Container>
-    <div class="features__container flow" style="--flow-space: 0.5rem;">
-      <span>How Can Help You</span>
-      <h2 class="heading-2">We’re helping teams do their best work</h2>
-
-      <FeaturesContent />
-    </div>
-  </Container>
+<section id="features" class="section_container">
+  <p class="text-center">How Can Help You</p>
+  <h2 class="h2 text-center">We’re helping teams do their best work</h2>
+  <div class="features_container">
+    {features.map((feature) => <Feature feature={feature} />)}
+  </div>
 </section>
 
 <style>
-  .features__container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    h2 {
-      text-align: center;
-    }
+  #features {
+    row-gap: 1rem;
   }
 
-  
+  #features p {
+    margin-bottom: 1rem;
+  }
 
-  .features__content {
-    margin-top: 4rem;
+  #features h2 {
+    width: min(100%, 580px);
+    margin: auto auto 3rem auto;
+  }
+
+  #features .features_container {
+    gap: 2rem;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 260px));
   }
 </style>

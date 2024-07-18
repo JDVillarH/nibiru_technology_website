@@ -27,12 +27,12 @@ const servicesData = [
 ];
 ---
 
-<section>
+<section id="service">
   {servicesData.map((service) => <Service services={service} />)}
 </section>
 
 <style>
-  section {
+  #services {
     background-color: var(--clr-cultured);
     display: grid;
     gap: 2rem;

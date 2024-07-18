@@ -13,11 +13,8 @@
   --ff-default: "Bricolage Grotesque Variable", sans-serif;
 
   --fs-heading-1: 2rem;
-  --fs-heading-2: 1.75rem;
-  --fs-heading-3: 1.5rem;
   --fs-default: 1rem;
-  --fs-small: 0.875rem;
-  --fs-smaller: 0.625rem;
+
 
   --fs-1: 1.875rem;
   --fs-2: 1.5rem;
@@ -36,12 +33,37 @@
 }
 
 /* ===== Responsive Typography */
-@media screen and (min-width: 50em) {
+
+@media (min-width: 768px) {
+
+  html {
+    font-size: 17.5px;
+  }
+
   :root {
-    --fs-heading-1: 3rem;
-    --fs-heading-2: 2.5rem;
-    --fs-heading-3: 1.875rem;
-    --fs-default: 1.125rem;
+    --fs-1: 2.286rem;
+    --fs-2: 1.829rem;
+  }
+}
+
+@media (min-width: 992px) {
+  html {
+    font-size: 18px;
+  }
+
+  :root {
+    --fs-1: 2.571rem;
+    --fs-2: 1.944rem;
+    --fs-3: 1.167rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  :root {
+    --fs-1: 3rem;
+    --fs-2: 2.333rem;
+    --fs-3: 1.222rem;
+    --fs-4: 0.944rem;
   }
 }
 
@@ -124,6 +146,7 @@ li {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
@@ -136,25 +159,33 @@ li {
 }
 
 /* ========== UTILITY CLASS ========== */
-.heading-1 {
-  font-size: var(--fs-heading-1);
+
+.h1,
+.h2,
+.h3 {
+  color: var(--clr-space-cadet);
   font-weight: var(--fw-bold);
-  color: var(--clr-space-cadet);
 }
 
-.heading-2 {
-  font-size: var(--fs-heading-2);
-  font-weight: var(--fw-semi-bold);
-  color: var(--clr-space-cadet);
+.h1 {
+  font-size: var(--fs-1);
 }
 
-.heading-3 {
-  font-size: var(--fs-heading-3);
-  font-weight: var(--fw-medium);
-  color: var(--clr-space-cadet);
+.h2 {
+  font-size: var(--fs-2);
 }
 
-.flow > *:where(:not(:first-child)) {
+.h3 {
+  font-size: var(--fs-3);
+}
+
+.paragraph {
+  color: var(--clr-black-coral);
+  font-size: var(--fs-4);
+  line-height: 1.8;
+}
+
+.flow>*:where(:not(:first-child)) {
   margin-top: var(--flow-space, 1rem);
 }
 
@@ -168,7 +199,7 @@ li {
   gap: 1rem;
 }
 
-.flex-group > * {
+.flex-group>* {
   min-width: fit-content;
   flex: 1;
 }
