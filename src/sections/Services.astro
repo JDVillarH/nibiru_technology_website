@@ -31,8 +31,14 @@ const servicesData = {
 <section class="services">
   <Container>
     <ServicesContent services={servicesData.services} />
-    <ServicesContent services={servicesData.ourServices}/>
+    <ServicesContent services={servicesData.ourServices} ourServices="ourServices"/>
   </Container>
 </section>
+
+<style>
+  .services {
+    background-color: var(--clr-cultured)
+  }
+</style>
 
 
