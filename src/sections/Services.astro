@@ -1,9 +1,8 @@
 ---
-import Container from "../layout/Container.astro";
-import ServicesContent from "../components/ServicesContent.astro";
+import Service from "../components/Service.astro";
 
-const servicesData = {
-  services: {
+const servicesData = [
+  {
     image: "/images/service-1.png",
     text: "Services We Offer",
     title: "We are here, to help your startup business",
@@ -14,7 +13,7 @@ const servicesData = {
       "File Backup",
     ],
   },
-  ourServices: {
+  {
     image: "/images/service-2.png",
     text: "Our Services",
     title: "Best IT & technology service in your area",
@@ -25,14 +24,17 @@ const servicesData = {
       "React Web Development",
     ],
   },
-};
+];
 ---
 
 <section class="services">
-  <Container>
-    <ServicesContent services={servicesData.services} />
-    <ServicesContent services={servicesData.ourServices}/>
-  </Container>
+  {servicesData.map((service) => <Service services={service} />)}
 </section>
 
-
+<style>
+  section {
+    background-color: var(--clr-cultured);
+    display: grid;
+    gap: 2rem;
+  }
+</style>

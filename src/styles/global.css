@@ -19,6 +19,12 @@
   --fs-small: 0.875rem;
   --fs-smaller: 0.625rem;
 
+  --fs-1: 1.875rem;
+  --fs-2: 1.5rem;
+  --fs-3: 1.063rem;
+  --fs-4: 0.875rem;
+  --fs-5: 0.813rem;
+
   /* ===== Weights ===== */
   --fw-regular: 400;
   --fw-medium: 500;
@@ -229,7 +235,7 @@ body {
   text-align: center;
 }
 
-.rouded_icon_container {
+.rounded_icon_container {
   display: flex;
   justify-content: center;
   align-items: center;
