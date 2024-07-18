@@ -27,7 +27,7 @@ const servicesData = [
 ];
 ---
 
-<section class="services">
+<section>
   {servicesData.map((service) => <Service services={service} />)}
 </section>
 
@@ -36,5 +36,11 @@ const servicesData = [
     background-color: var(--clr-cultured);
     display: grid;
     gap: 2rem;
+
+    @media screen and (min-width: 990px) {
+      .services_section:nth-child(odd) article {
+        order: 1;
+      }
+    }
   }
 </style>
