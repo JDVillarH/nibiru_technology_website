@@ -10,7 +10,7 @@
   --clr-black: hsl(0, 0%, 0%);
 
   /* ===== Fonts and Typography ===== */
-  --ff-default: 'Bricolage Grotesque Variable', sans-serif;
+  --ff-default: "Bricolage Grotesque Variable", sans-serif;
 
   --fs-heading-1: 2rem;
   --fs-heading-2: 1.75rem;
@@ -124,13 +124,12 @@ li {
 }
 
 @media (prefers-reduced-motion: reduce) {
-
   *,
   *::before,
   *::after {
-    animation-duration: .01ms !important;
+    animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
-    transition-duration: .01ms !important;
+    transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
     transition: none;
   }
@@ -155,12 +154,12 @@ li {
   color: var(--clr-space-cadet);
 }
 
-.flow>*:where(:not(:first-child)) {
+.flow > *:where(:not(:first-child)) {
   margin-top: var(--flow-space, 1rem);
 }
 
 .padding-block {
-  padding-block: 3rem;
+  padding-block: 1.5rem;
 }
 
 .flex-group {
@@ -169,7 +168,7 @@ li {
   gap: 1rem;
 }
 
-.flex-group>* {
+.flex-group > * {
   min-width: fit-content;
   flex: 1;
 }

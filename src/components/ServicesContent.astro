@@ -1,0 +1,70 @@
+---
+import CheckIcon from "../icons/CheckIcon.astro";
+
+const { services, ourServices } = Astro.props;
+
+const { text, title, image, servicesList } = services;
+---
+
+<div class=`even-columns items-center padding-block ${ourServices}`>
+  <img src={image} alt="Illustration art" />
+  <div>
+    <span>{text}</span>
+    <h2 class="heading-2">{title}</h2>
+    <ul class="services__list">
+      {
+        servicesList.map((service) => {
+          return (
+            <li class="services__list-item">
+              <div class="services__list-icon">
+                <CheckIcon />
+              </div>
+              <h4>{service}</h4>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </div>
+</div>
+
+<style>
+  .services__list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .services__list-item {
+    background-color: var(--clr-white);
+    max-width: 343px;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.5rem;
+  }
+
+  .services__list-icon {
+    background-color: var(--clr-cultured);
+    padding: 0.25rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+  }
+
+  .services__list-item:hover .services__list-icon {
+    background-color: var(--clr-red-crayola);
+  }
+
+  .ourServices > *:nth-child(1){
+    order: 1;
+  }
+
+  @media screen and (min-width: 50em) {
+    .services__list > *:nth-child(2),
+    .services__list > *:nth-child(4) {
+      translate: 2rem;
+    }
+  }
+
+</style>
