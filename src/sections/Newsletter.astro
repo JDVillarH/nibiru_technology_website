@@ -1,26 +1,55 @@
 ---
+import ChevronRight from "../icons/ChevronRight.astro";
+
 
 ---
 
 <section id="newsletter">
-  <div class="even-columns section_container">
-    <div>
+  <div class="even-columns items-center section_container">
+    <div class="newsletter__content">
       <span>Subscribe Our Newsletter</span>
-      <h2>The latest resources, sent to your inbox weekly</h2>
-      <form action="">
-        <input type="text" placeholder="Enter your email address" />
-        <button type="submit">
+      <h2 class="h2">The latest resources, sent to your inbox weekly</h2>
+      <form class="newsletter__form">
+        <input
+          class="newsletter__form-input"
+          type="text"
+          placeholder="Enter your email address"
+        />
+        <button class="newsletter__form-btn btn btn-primary" type="submit">
           <span>Subscribe Now</span>
-          <!-- icon here -->
+          <ChevronRight />
         </button>
       </form>
     </div>
     <img src="/images/newsletter.png" alt="Illustration art" />
   </div>
-
-  <style>
-    section {
-      background-color: var(--clr-cultured);
-    }
-  </style>
 </section>
+
+<style>
+  section {
+    background-color: var(--clr-cultured);
+  }
+
+  .newsletter__content {
+    display: grid;
+    gap: 1rem;
+
+    .newsletter__form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+
+      .newsletter__form-input {
+        padding: 0.5rem 1rem;
+        border: 1px solid var(--clr-black-coral);
+        border-radius: 0.25rem;
+        background-color: var(--clr-white);
+        color: inherit;
+      }
+
+      .newsletter__form-btn {
+        width: fit-content;
+      }
+    }
+  }
+</style>
