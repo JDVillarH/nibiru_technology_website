@@ -1,7 +1,5 @@
 ---
 import ChevronRight from "../icons/ChevronRight.astro";
-import MenuIcon from "../icons/MenuIcon.astro";
-import CloseIcon from "../icons/CloseIcon.astro";
 import Container from "../layout/Container.astro";
 import Navbar from "./Navbar.astro";
 
@@ -34,14 +32,19 @@ const navbarList = [
     <div class="header-wrapper">
       <div class="header__logo-container">
         <a href="#">
-          <img src="/images/logo.svg" alt="Solutry logo" loading="lazy" />
+          <img
+            class="brand_img"
+            src="/images/logo.svg"
+            alt="Solutry logo"
+            loading="lazy"
+          />
         </a>
         <button class="hamburger">
           <span></span>
         </button>
       </div>
 
-      <Navbar />
+      <Navbar navbarList={navbarList} />
 
       <div class="header__btn">
         <a href="#" class="btn">
@@ -59,10 +62,7 @@ const navbarList = [
     position: fixed;
     padding-block: 1.25rem;
     background-color: var(--clr-cultured);
-  }
-
-  .header__logo-container img {
-    width: 8rem;
+    z-index: 10;
   }
 
   .header-wrapper {

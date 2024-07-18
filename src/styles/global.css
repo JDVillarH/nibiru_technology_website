@@ -71,7 +71,8 @@ svg {
 input,
 button,
 textarea,
-select {
+select,
+address {
   font: inherit;
 }
 
@@ -82,7 +83,8 @@ button {
   cursor: pointer;
 }
 
-p {
+p,
+address {
   text-wrap: pretty;
   overflow-wrap: break-word;
 }
@@ -174,9 +176,12 @@ li {
   gap: 2rem;
 }
 
+.section_container {
+  margin-inline: auto;
+  width: min(80%, 1280px);
+}
+
 section {
-  /* Esto es lo mismo que margin-inline: auto; */
-  margin: 0 auto;
   padding-block: var(--section-padding);
 }
 
@@ -215,6 +220,24 @@ body {
   color: var(--clr-black-coral);
 }
 
+.brand_img {
+  width: 160px;
+}
+
 .text-center {
   text-align: center;
+}
+
+.rouded_icon_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+
+  svg {
+    width: 22px;
+    height: 22px;
+  }
 }
