@@ -3,28 +3,63 @@ import ChevronRight from "../icons/ChevronRight.astro";
 ---
 
 <section>
-  <div class="even-columns items-center section_container">
-    <div>
+  <div class="section_container hero_container">
+    <div class="hero_content">
       <h1 class="h1">Secure IT solutions for a more secure environment</h1>
       <p class="paragraph">
         Velit hendrerit sit auctor tempor sem. Congue mi tempor condimentum
         felis arcu, non cursus. Nulla pharetra porttitor sed platea arcu et leo
         odio.
       </p>
-      <a href="#" class="btn btn-primary">
-        <span>Get Started Now</span>
-        <ChevronRight />
-      </a>
+      <div class="hero_buttons">
+        <a href="#" class="button red_button">
+          Get Started <ChevronRight width={24} />
+        </a>
+        <a href="#" class="button red_button_outline">
+          Get Started <ChevronRight width={24} />
+        </a>
+      </div>
     </div>
+
     <figure>
-      <img src="/images/hero-banner.webp" alt="Illustration art" />
+      <img
+        src="/images/hero-banner.webp"
+        alt="Illustration art"
+        loading="lazy"
+      />
     </figure>
   </div>
 </section>
 
 <style>
   section {
-    background-color: var(--clr-cultured);
     padding-top: 9rem;
+    background-color: var(--clr-cultured);
+  }
+
+  .hero_container {
+    gap: 2rem;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 560px), 1fr));
+  }
+
+  .hero_content {
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: min(100%, 560px);
+    margin-inline: auto;
+  }
+
+  .hero_content .hero_buttons {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .hero_container figure img {
+    margin-inline: auto;
+    width: min(560px, 100%);
   }
 </style>

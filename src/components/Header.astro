@@ -1,6 +1,6 @@
 ---
 import ChevronRight from "../icons/ChevronRight.astro";
-import Container from "../layout/Container.astro";
+import HamburguerIcon from "../icons/HamburguerIcon.astro";
 import Navbar from "./Navbar.astro";
 
 const navbarList = [
@@ -28,106 +28,86 @@ const navbarList = [
 ---
 
 <header class="header">
-  <div class="header-wrapper section_container">
-    <div class="header__logo-container">
+  <div class="header_container section_container">
+    <div class="header_logo_container">
       <a href="#">
-        <img
-          class="brand_img"
-          src="/images/logo.svg"
-          alt="Solutry logo"
-          loading="lazy"
-        />
+        <span>Nibiru</span>
+        <span>Technology</span>
       </a>
-      <button class="hamburger">
-        <span></span>
-      </button>
+      <HamburguerIcon />
     </div>
 
     <Navbar navbarList={navbarList} />
 
-    <div class="header__btn">
-      <a href="#" class="btn">
-        <span>Get Started</span>
-        <ChevronRight />
-      </a>
-    </div>
+    <a href="#" class="header_button button blue_button">
+      Get Started <ChevronRight width={20} />
+    </a>
   </div>
 </header>
 
 <style>
   .header {
+    z-index: 10;
     width: 100%;
     position: fixed;
     padding-block: 1.25rem;
-    background-color: var(--clr-cultured);
-    z-index: 10;
+    font-family: var(--ff-poppins);
+    background-color: var(--clr-white);
   }
 
-  .header-wrapper {
+  .header_container,
+  .header_logo_container {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
 
-  .hamburger {
-    display: none;
-    justify-content: center;
+  .header_logo_container a span:nth-child(1) {
+    font-weight: var(--fw-bold);
+    color: var(--clr-red-crayola);
+  }
 
-    span::before,
-    span::after,
-    span {
-      width: 32px;
-      height: 3px;
-      border-radius: 2px;
-      background-color: var(--clr-black-coral);
-      transition: 0.3s;
-    }
+  .header_logo_container a span:nth-child(2) {
+    border-radius: 6px;
+    padding: 0.2rem 0.5rem;
+    background-color: #e5e7eb;
+    color: var(--clr-black-coral);
+    font-weight: var(--fw-bold);
+    transition: 0.2s ease-in-out;
+  }
 
-    span::after,
-    span::before {
-      content: "";
-      position: relative;
-      display: inline-block;
-    }
+  .header_logo_container a span:nth-child(2):hover {
+    background-color: var(--clr-red-crayola);
+    transition: 0.2s ease-in-out;
+    color: #e5e7eb;
+  }
 
-    span::after {
-      top: -26px;
-    }
+  .header {
+    animation: header-shadown 1s linear both;
+    animation-timeline: scroll();
+    animation-range: 0 100px;
+  }
 
-    span::before {
-      top: -23px;
+  @keyframes header-shadown {
+    to {
+      padding-block: 0.7rem;
+      background-color: #fffc;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+      border-bottom: 1px solid #e5e7eb;
+      backdrop-filter: blur(16px);
     }
   }
 
-  @media screen and (max-width: 50em) {
-    .header__logo-container {
+  @media screen and (max-width: 1024px) {
+    .header_container {
+      flex-direction: column;
+    }
+
+    .header_logo_container {
       width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
     }
 
-    .hamburger {
-      display: flex;
-    }
-
-    .hamburger.isOpen {
-      span {
-        background-color: transparent;
-
-        &::before {
-          top: -14px;
-          transform: rotate(135deg);
-        }
-
-        &::after {
-          top: -36px;
-          transform: rotate(-135deg);
-        }
-      }
-    }
-
-    .header__btn {
+    .header_button {
       display: none;
     }
   }
@@ -138,7 +118,7 @@ const navbarList = [
   const navbar = document.querySelector(".navbar");
 
   btnToggle.addEventListener("click", () => {
-    btnToggle.classList.toggle("isOpen");
-    navbar.classList.toggle("isOpen");
+    btnToggle.classList.toggle("active");
+    navbar.classList.toggle("active");
   });
 </script>
