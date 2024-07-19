@@ -2,52 +2,39 @@
 import ChevronRight from "../icons/ChevronRight.astro";
 
 const { feature } = Astro.props;
-const { title, image, description } = feature;
 ---
 
-<article>
-  <img src={image} alt={title} />
-  <div>
-    <h3 class="h3">{title}</h3>
-    <p class="paragraph">{description}</p>
-    <a href="#">Learn More <ChevronRight width={20} /></a>
+<article class="feature_card">
+  <div class="feature_icon">
+    {(<feature.icon width="24" />)}
+  </div>
+  <div class="feature_text">
+    <h3 class="h3">{feature.title}</h3>
+    <p class="paragraph">{feature.description}</p>
   </div>
 </article>
 
 <style>
-  article {
+  .feature_card {
+    padding: 1.25rem;
     gap: 1rem;
     display: flex;
     align-items: flex-start;
     flex-direction: column;
   }
+  .feature_card .feature_icon {
+    background-color: #edf1ff;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid #dee6ff;
+  }
 
-  article div {
+  .feature_card .feature_icon svg {
+    color: #595bfb;
+  }
+
+  .feature_card .feature_text {
     display: grid;
-    gap: 1rem;
-  }
-
-  article a,
-  article a:hover {
-    transition: 0.2s ease-in-out;
-  }
-
-  article a {
-    gap: 0.25rem;
-    display: flex;
-    color: var(--clr-red-crayola);
-
-    svg {
-      transition: 0.2s ease-in-out;
-    }
-  }
-
-  article a:hover {
-    color: var(--clr-black-coral);
-
-    svg {
-      transition: 0.2s ease-in-out;
-      transform: translateX(0.25rem);
-    }
+    gap: 0.5rem;
   }
 </style>

@@ -1,27 +1,28 @@
 ---
 import Feature from "../components/Feature.astro";
+import PinMapIcon from "../icons/PinMapIcon.astro";
 
 const features = [
   {
-    image: "/images/features-icon-1.png",
+    icon: PinMapIcon,
     title: "Zero Configuration",
     description:
       "Lorem ipsum dolor sit amet, conse ctetur adipiscing elit. Sed est non feugiat sagittis.",
   },
   {
-    image: "/images/features-icon-2.png",
+    icon: PinMapIcon,
     title: "Code Security",
     description:
       "Lorem ipsum dolor sit amet, conse ctetur adipiscing elit. Sed est non feugiat sagittis.",
   },
   {
-    image: "/images/features-icon-3.png",
+    icon: PinMapIcon,
     title: "Team Management",
     description:
       "Lorem ipsum dolor sit amet, conse ctetur adipiscing elit. Sed est non feugiat sagittis.",
   },
   {
-    image: "/images/features-icon-4.png",
+    icon: PinMapIcon,
     title: "Access Controlled",
     description:
       "Lorem ipsum dolor sit amet, conse ctetur adipiscing elit. Sed est non feugiat sagittis.",
@@ -30,31 +31,37 @@ const features = [
 ---
 
 <section id="features" class="section_container">
-  <p class="text-center">How Can Help You</p>
-  <h2 class="h2 text-center">We’re helping teams do their best work</h2>
-  <div class="features_container">
+  <div class="features_text">
+    <span class="outlined_subtitle">More Features</span>
+    <h2 class="h2">We’re helping teams do their best work</h2>
+    <p class="paragraph">
+      Unlock your team's true potential with our state-of-the-art SaaS platform.
+      From intelligent task management to real-time collaboration and top-notch
+      data security, we have everything you need to streamline your workflows
+      and achieve high productivity.
+    </p>
+  </div>
+  <div class="features_cards">
     {features.map((feature) => <Feature feature={feature} />)}
   </div>
+
+  <style>
+    #features .features_text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1rem;
+      width: min(100%, 780px);
+      margin-inline: auto;
+    }
+
+    #features .features_cards {
+      gap: 1rem;
+      display: grid;
+      justify-content: center;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 410px));
+      margin-top: 4rem;
+    }
+  </style>
 </section>
-
-<style>
-  #features {
-    row-gap: 1rem;
-  }
-
-  #features p {
-    margin-bottom: 1rem;
-  }
-
-  #features h2 {
-    width: min(100%, 580px);
-    margin: auto auto 3rem auto;
-  }
-
-  #features .features_container {
-    gap: 2rem;
-    display: grid;
-    justify-content: center;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 260px));
-  }
-</style>

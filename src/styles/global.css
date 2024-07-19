@@ -10,8 +10,9 @@
   --clr-black: hsl(0, 0%, 0%);
 
   /* ===== Fonts and Typography ===== */
-  --ff-default: "Bricolage Grotesque Variable", sans-serif;
-  --ff-poppins: "Poppins", sans-serif;
+  --ff-default: 'Poppins', sans-serif;
+  --ff-inter: 'Inter Variable', sans-serif;
+  /* "Bricolage Grotesque Variable", sans-serif; */
 
   --fs-heading-1: 2rem;
   --fs-default: 1rem;
@@ -124,6 +125,7 @@ h3,
 h4,
 h5,
 h6 {
+  font-family: var(--ff-inter);
   text-wrap: balance;
   overflow-wrap: break-word;
 }
@@ -131,7 +133,7 @@ h6 {
 h1,
 h2,
 h3 {
-  line-height: 1.2;
+  line-height: 1;
 }
 
 a {
@@ -164,8 +166,9 @@ li {
 .h1,
 .h2,
 .h3 {
-  color: var(--clr-space-cadet);
+  font-family: var(--ff-inter);
   font-weight: var(--fw-bold);
+  color: var(--clr-black);
 }
 
 .h1 {
@@ -183,7 +186,19 @@ li {
 .paragraph {
   color: var(--clr-black-coral);
   font-size: var(--fs-4);
-  line-height: 1.8;
+  line-height: 1.75rem;
+}
+
+.outlined_subtitle {
+  font-size: var(--fs-5);
+  font-weight: var(--fw-medium);
+  padding-block: .25rem;
+  padding-inline: .75rem;
+  border-radius: 2rem;
+  border: 1px solid var(--clr-red-crayola);
+  background-color: #ffe0e5;
+  color: #ff5d83;
+  text-transform: uppercase;
 }
 
 .flow>*:where(:not(:first-child)) {
@@ -223,13 +238,6 @@ section {
   padding-block: var(--section-padding);
 }
 
-@media screen and (min-width: 50em) {
-  .even-columns {
-    grid-auto-flow: column;
-    grid-auto-columns: 1fr;
-  }
-}
-
 .button {
   gap: 0.25rem;
   display: flex;
@@ -239,7 +247,7 @@ section {
   padding-block: .5rem;
   transition: .2s ease-in-out;
   color: var(--clr-white);
-  font-size: 0.875rem;
+  font-size: 0.8rem;
 
   svg {
     transition: 0.2s ease-in-out;
@@ -280,6 +288,13 @@ section {
 .red_button_outline:hover {
   background-color: #ffe0e5;
   color: #ff5d83;
+}
+
+@media screen and (min-width: 50em) {
+  .even-columns {
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
 }
 
 /* ========== GENERAL STYLES ========== */
