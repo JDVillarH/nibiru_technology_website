@@ -27,6 +27,12 @@ const { navbarList } = Astro.props;
 
   ul li a {
     font-size: 0.875rem;
+    transition: color 0.2s ease-in-out;
+  }
+
+  ul li a:hover {
+    transition: color 0.2s ease-in-out;
+    color: var(--clr-red-crayola);
   }
 
   .navbar_button {
