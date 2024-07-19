@@ -1,0 +1,58 @@
+<button class="hamburger">
+  <span></span>
+</button>
+
+<style>
+  .hamburger {
+    display: none;
+    justify-content: center;
+  }
+
+  .hamburger span::after {
+    top: -26px;
+  }
+
+  .hamburger span::before {
+    top: -23px;
+  }
+
+  .hamburger span::before,
+  .hamburger span::after {
+    content: "";
+    position: relative;
+    display: inline-block;
+  }
+
+  .hamburger span::before,
+  .hamburger span::after,
+  .hamburger span {
+    width: 32px;
+    height: 3px;
+    font-size: 16.2px;
+    border-radius: 2px;
+    background-color: var(--clr-black-coral);
+    transition: 0.3s;
+  }
+
+  .hamburger.active {
+    span {
+      background-color: transparent;
+
+      &::before {
+        top: -14px;
+        transform: rotate(135deg);
+      }
+
+      &::after {
+        top: -36px;
+        transform: rotate(-135deg);
+      }
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    .hamburger {
+      display: flex;
+    }
+  }
+</style>

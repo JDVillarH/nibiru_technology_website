@@ -11,6 +11,7 @@
 
   /* ===== Fonts and Typography ===== */
   --ff-default: "Bricolage Grotesque Variable", sans-serif;
+  --ff-poppins: "Poppins", sans-serif;
 
   --fs-heading-1: 2rem;
   --fs-default: 1rem;
@@ -29,7 +30,7 @@
   --fw-bold: 700;
 
   /* ===== Spacing ===== */
-  --section-padding: 7.5rem;
+  --section-padding: 7rem;
 }
 
 /* ===== Responsive Typography */
@@ -229,23 +230,56 @@ section {
   }
 }
 
-.btn {
-  display: inline-flex;
-  align-items: center;
+.button {
   gap: 0.25rem;
-  background-color: var(--clr-blue-ryb);
-  color: var(--clr-white);
-
+  display: flex;
+  align-items: center;
+  border-radius: 2rem;
   padding-inline: 1rem;
-  padding-block: 0.5rem;
-  border-radius: 0.25rem;
+  padding-block: .5rem;
+  transition: .2s ease-in-out;
+  color: var(--clr-white);
+  font-size: 0.875rem;
+
+  svg {
+    transition: 0.2s ease-in-out;
+  }
+
+  &:hover {
+    transition: 0.2s ease-in-out;
+
+    svg {
+      transform: translateX(0.25rem);
+      transition: 0.2s ease-in-out;
+    }
+  }
 }
 
-.btn-primary {
+.blue_button {
+  background-color: var(--clr-blue-ryb);
+}
+
+.blue_button:hover {
   background-color: var(--clr-red-crayola);
-  padding-inline: 1.25rem;
-  padding-block: 0.625rem;
-  border-radius: 0.25rem;
+}
+
+.red_button {
+  background-color: var(--clr-red-crayola);
+}
+
+.red_button:hover {
+  background-color: var(--clr-blue-ryb);
+}
+
+.red_button_outline {
+  background-color: var(--clr-white);
+  border: 1px solid var(--clr-red-crayola);
+  color: var(--clr-red-crayola);
+}
+
+.red_button_outline:hover {
+  background-color: #ffe0e5;
+  color: #ff5d83;
 }
 
 /* ========== GENERAL STYLES ========== */
