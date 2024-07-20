@@ -130,12 +130,6 @@ h6 {
   overflow-wrap: break-word;
 }
 
-h1,
-h2,
-h3 {
-  line-height: 1;
-}
-
 a {
   color: inherit;
   cursor: pointer;
@@ -167,20 +161,25 @@ li {
 .h2,
 .h3 {
   font-family: var(--ff-inter);
-  font-weight: var(--fw-bold);
   color: var(--clr-black);
 }
 
 .h1 {
   font-size: var(--fs-1);
+  font-weight: var(--fw-bold);
+  line-height: 1;
 }
 
 .h2 {
   font-size: var(--fs-2);
+  font-weight: var(--fw-bold);
+  line-height: 1;
 }
 
 .h3 {
   font-size: var(--fs-3);
+  font-weight: var(--fw-semi-bold);
+  line-height: 2rem;
 }
 
 .paragraph {
@@ -195,10 +194,18 @@ li {
   padding-block: .25rem;
   padding-inline: .75rem;
   border-radius: 2rem;
-  border: 1px solid var(--clr-red-crayola);
+}
+
+.outlined_subtitle.red {
+  border: 1px solid #ffc6d2;
   background-color: #ffe0e5;
   color: #ff5d83;
-  text-transform: uppercase;
+}
+
+.outlined_subtitle.blue {
+  border: 1px solid #c3cfff;
+  background-color: #e0e9ff;
+  color: #5d7fff;
 }
 
 .flow>*:where(:not(:first-child)) {
@@ -231,7 +238,7 @@ li {
 
 .section_container {
   margin-inline: auto;
-  width: min(80%, 1280px);
+  width: min(90%, 1280px);
 }
 
 section {
@@ -322,9 +329,4 @@ body {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-
-  svg {
-    width: 22px;
-    height: 22px;
-  }
 }

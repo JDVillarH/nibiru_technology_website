@@ -2,33 +2,29 @@
 import CheckIcon from "../icons/CheckIcon.astro";
 
 const { services } = Astro.props;
-const { text, title, image, servicesList } = services;
+const { subtitle, title, image, servicesList } = services;
 ---
 
 <div class="services_section section_container">
   <article>
-    <header>
-      <p>{text}</p>
-      <h2 class="h2">{title}</h2>
-    </header>
-    <ul class="services__list">
+    <span class="outlined_subtitle blue">{subtitle}</span>
+    <h3 class="h3">{title}</h3>
+    <ul class="services_list">
       {
-        servicesList.map((service) => {
+        servicesList.map((service: Text) => {
           return (
             <li>
               <div class="services__icon rounded_icon_container">
                 <CheckIcon />
               </div>
-              <h4>{service}</h4>
+              <p>{service}</p>
             </li>
           );
         })
       }
     </ul>
   </article>
-  <figure>
-    <img src={image} alt={title} />
-  </figure>
+  <img src={image} alt={title} />
 </div>
 
 <style>
@@ -39,30 +35,30 @@ const { text, title, image, servicesList } = services;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
   }
 
-  h2 {
-    margin-bottom: 2rem;
+  .services_section article h3 {
+    margin-block: 1rem;
+    font-size: 1.4rem;
   }
 
-  ul {
-    display: grid;
-    row-gap: 1.5rem;
-  }
-
-  ul li {
-    gap: 1rem;
+  .services_section .services_list li {
+    gap: 0.5rem;
     display: flex;
-    padding: 0.5rem;
     align-items: center;
-    background-color: var(--clr-white);
     border-radius: 8px;
+    font-size: var(--fs-5);
   }
 
-  ul li:nth-child(even) {
-    transform: translateX(3rem);
+  .services_list {
+    display: grid;
+    row-gap: 0.5rem;
   }
 
   .services__icon {
-    background-color: var(--clr-cultured);
+    width: 30px;
+    height: 30px;
+    background-color: var(--clr-white);
+    border: 1px solid var(--clr-red-crayola);
+    color: var(--clr-red-crayola);
   }
 
   .services__icon svg {
@@ -74,11 +70,7 @@ const { text, title, image, servicesList } = services;
     transition: 0.2s ease;
   }
 
-  ul li:hover .services__icon svg {
-    color: var(--clr-white);
-  }
-
   ul li:hover .services__icon {
-    background-color: var(--clr-red-crayola);
+    background-color: #ffe0e5;
   }
 </style>
