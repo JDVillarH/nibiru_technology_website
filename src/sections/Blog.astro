@@ -29,20 +29,52 @@ const postsList = [
 ];
 ---
 
-<section id="blog">
-  <p class="text-center">Latest News</p>
-  <h2 class="h2 text-center">Our latest articles & resources</h2>
+<section id="blog" class="section_container">
+  <div class="blog_text">
+    <span class="outlined_subtitle red">More Features</span>
+    <h2 class="h2">Our latest articles & resources</h2>
+    <p class="paragraph">
+      Unlock your team's true potential with our state-of-the-art SaaS platform.
+      From intelligent task management to real-time collaboration and top-notch
+      data security, we have everything you need to streamline your workflows
+      and achieve high productivity.
+    </p>
+  </div>
   <div class="blog_container section_container">
     {postsList.map((post) => <Card post={post} />)}
   </div>
 </section>
 
 <style>
+  #blog {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  #blog .blog_text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    width: min(100%, 780px);
+    margin-inline: auto;
+  }
+
   #blog .blog_container {
     gap: 2rem;
     display: grid;
     justify-content: center;
     padding: 1.2rem;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 350px));
+    margin-top: 4rem;
+  }
+
+  @media (max-width: 1024px) {
+    #blog .blog_text {
+      align-items: flex-start;
+      text-align: left;
+    }
   }
 </style>
