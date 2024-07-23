@@ -41,29 +41,31 @@ const advantages = [
 <section>
   <div class="section_container">
     <div class="highlights">
-      <h2 class="h2">
-        Everything you need to <span class="text-red-crayola"
-          >start a website</span
-        >
-      </h2>
-      <p>
-        This package comes fully equipped. It leverages the best features of
-        state-of-the-art tools and adds its own innovations.
-      </p>
-
+      <div class="highlights__text">
+        <span class="outlined_subtitle blue">Blue generic subtitle</span>
+        <h2 class="h2">
+          Everything you need to <span class="text-red-crayola"
+            >start a website</span
+          >
+        </h2>
+        <p class="paragraph">
+          This package comes fully equipped. It leverages the best features of
+          state-of-the-art tools and adds its own innovations.
+        </p>
+      </div>
       <div class="highlights__card-container">
         {
           advantages.map((advantage) => {
             return (
               <div class="highlights__card">
-                <div class="highlights__card-image">
+                <div class="highlights__card_image">
                   <img src={advantage.image} alt="highlight image" />
                 </div>
 
-                <div class="highlights__card-content flow">
-                  <span class="badge">{advantage.tag}</span>
+                <div class="highlights__card_content">
+                  <span class="outlined_subtitle red">{advantage.tag}</span>
                   <h3 class="h3">{advantage.title}</h3>
-                  <p>{advantage.description}</p>
+                  <p class="paragraph">{advantage.description}</p>
                 </div>
               </div>
             );
@@ -75,94 +77,89 @@ const advantages = [
 </section>
 
 <style>
+  .highlights__text {
+    gap: 1rem;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
   .highlights__card-container {
     margin-top: 4rem;
     display: grid;
     gap: 1.5rem;
   }
 
-  @media screen and (min-width: 768px){
+  .highlights__card {
+    gap: 0.5rem;
+    display: grid;
+    padding: 2rem;
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 1rem;
+  }
+
+  .highlights__card_image {
+    position: relative;
+  }
+
+  .highlights__card_image::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(to top, #f9fafb, #0000, #0000);
+    z-index: 5;
+  }
+
+  .highlights__card_content.flow {
+    --flow-space: 0.5rem;
+  }
+
+  .highlights__card_content h3 {
+    margin-block: 0.5rem;
+  }
+
+  .highlights__card_content p {
+    font-size: var(--fs-5);
+    line-height: 1.4rem;
+  }
+
+  @media screen and (min-width: 768px) {
     .highlights__card-container {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .highlights__card-container *:nth-child(1) {
+    .highlights__card-container .highlights__card:nth-child(1) {
       grid-column: 1 / 3;
     }
   }
 
-  @media screen and (min-width: 1024px){
+  @media screen and (min-width: 1024px) {
     .highlights__card-container {
-      grid-template-columns: repeat(15, minmax(0, 1fr));
+      grid-template-columns: repeat(6, minmax(0, 1fr));
     }
 
-    .highlights__card-container *:nth-child(1) {
-      grid-column: span 9;
+    .highlights__card-container .highlights__card:nth-child(1) {
+      grid-column: span 3;
     }
-  
-    .highlights__card-container *:nth-child(2) {
-      grid-column: span 6;
+
+    .highlights__card-container .highlights__card:nth-child(2) {
+      grid-column: span 3;
     }
-  
-    .highlights__card-container *:nth-child(3),
-    .highlights__card-container *:nth-child(4),
-    .highlights__card-container *:nth-child(5) {
-      grid-column: span 5;
+
+    .highlights__card-container *:nth-child(n + 3) {
+      grid-column: span 2;
     }
-  }
 
-  .highlights__card {
-    background-color: rgb(249, 250, 251);
-    padding: 2rem;
-    border: 1px solid rgb(229, 231, 235);
-    border-radius: 1rem;
-    display: grid;
-    gap: 0.5rem;
-  }
+    .highlights__card_image {
+      position: relative;
+      height: 15dvw;
+      overflow: hidden;
 
-  .highlights__card-image {
-    position: relative;
-
-    & img {
-      width: 100%;
-      min-height: 180px;
-      object-fit: cover;
-      object-position: center;
-      max-height: 240px;
+      & img {
+        width: 100%;
+        object-fit: contain;
+      }
     }
-  }
-
-  .highlights__card-image::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: linear-gradient(
-      to top,
-      rgb(249, 250, 251),
-      rgba(0, 0, 0, 0),
-      rgba(0, 0, 0, 0)
-    );
-    z-index: 10;
-  }
-
-  .highlights__card-content.flow{
-    --flow-space: 0.5rem;
-  }
-
-  .badge {
-    font-family: var(--ff-inter);
-    font-size: 0.75rem;
-    font-weight: 500;
-    line-height: 1.5;
-
-    color: rgb(190, 24, 93);
-    background-color: rgb(253, 242, 248);
-    padding: 0.25rem 0.5rem;
-    border: 1px solid rgb(229, 231, 235);
-    border-radius: 1rem;
-    box-shadow:
-      rgb(255, 255, 255) 0px 0px 0px 0px inset,
-      rgba(190, 24, 93, 0.1) 0px 0px 0px 1px inset,
-      rgba(0, 0, 0, 0) 0px 0px 0px 0px;
   }
 </style>
