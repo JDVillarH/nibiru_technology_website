@@ -1,32 +1,6 @@
 ---
 import Card from "../components/Card.astro";
-
-const postsList = [
-  {
-    image: "/images/blog-1.jpg",
-    title: "How is technology working with new things?",
-    tags: {
-      category: "Technology",
-      date: "25 Feb, 2022",
-    },
-  },
-  {
-    image: "/images/blog-2.jpg",
-    title: "Top 10 important tips on IT services & design",
-    tags: {
-      category: "Design",
-      date: "25 Feb, 2022",
-    },
-  },
-  {
-    image: "/images/blog-3.jpg",
-    title: "How our company works in different ways",
-    tags: {
-      category: "Startup",
-      date: "25 Feb, 2022",
-    },
-  },
-];
+import { postsList } from "../constants/data.js";
 ---
 
 <section id="blog" class="section_container flex items-center flex-col">

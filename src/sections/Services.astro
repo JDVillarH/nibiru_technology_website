@@ -1,31 +1,7 @@
 ---
 import Service from "../components/Service.astro";
 
-const servicesData = [
-  {
-    image: "/images/service.webp",
-    subtitle: "Services We Offer",
-    title:
-      "Experience the Ultimate Boost in Productivity with Our Intuitive Platform",
-    servicesList: [
-      "Cloud Databases",
-      "Website Hosting",
-      "Remote Desktop",
-      "File Backup",
-    ],
-  },
-  {
-    image: "/images/service.webp",
-    subtitle: "Our Services",
-    title: "Best IT & technology service in your area",
-    servicesList: [
-      "Design & Development",
-      "Android Apps Development",
-      "Laravel Web Development",
-      "React Web Development",
-    ],
-  },
-];
+import { servicesData } from "../constants/data.js";
 ---
 
 <section id="service">
@@ -38,7 +14,7 @@ const servicesData = [
     display: grid;
     gap: 2rem;
 
-    @media screen and (min-width: 990px) {
+    @media screen and (min-width: 992px) {
       .services_section:nth-child(odd) article {
         order: 1;
       }
