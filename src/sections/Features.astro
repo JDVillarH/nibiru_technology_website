@@ -27,19 +27,15 @@ import { features } from "../constants/data.js";
 
     #features .features_cards {
       gap: 1rem;
-      display: grid;
-      justify-content: center;
-      grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 410px));
+      display: flex;
+      flex-wrap: wrap;
       margin-top: 4rem;
     }
 
     @media (max-width: 1024px) {
-      #features .features_cards {
-        grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
-      }
-
       #features .features_text {
         align-items: flex-start;
+        margin-inline: initial;
         text-align: left;
       }
     }

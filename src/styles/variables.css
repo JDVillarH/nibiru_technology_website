@@ -24,6 +24,18 @@
     --clr-blue-ryb-900: #2d2887;
     --clr-blue-ryb-950: #1c184e;
 
+    --clr-slate-50: #f9fafb;
+    --clr-slate-100: #eceff2;
+    --clr-slate-200: #d5dde2;
+    --clr-slate-300: #b0bfc9;
+    --clr-slate-400: #859bab;
+    --clr-slate-500: #668091;
+    --clr-slate-600: #516778;
+    --clr-slate-700: #425462;
+    --clr-slate-800: #394753;
+    --clr-slate-900: #333e47;
+    --clr-slate-950: #22292f;
+
     /* Font - Weight */
     --fw-thin: 100;
     --fw-extra-light: 200;

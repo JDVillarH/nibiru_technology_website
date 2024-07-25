@@ -11,24 +11,6 @@ body {
   font: normal normal var(--fw-regular) var(--fs-4)/normal var(--ff-default);
 }
 
-@media (min-width: 576px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 17px;
-  }
-}
-
-@media (min-width: 992px) {
-  html {
-    font-size: 17.5px;
-  }
-}
-
 @media (min-width: 1200px) {
   html {
     font-size: 18px;
@@ -40,23 +22,28 @@ section {
 }
 
 h1 {
-  font: normal normal var(--fw-bold) var(--fs-heading-1)/1 var(--ff-default);
+  font-size: clamp(var(--fs-heading-2), 4vw + 1rem, var(--fs-heading-1));
+  line-height: 1;
 }
 
 h2 {
-  font: normal normal var(--fw-bold) var(--fs-heading-2)/1 var(--ff-default);
+  font-size: clamp(var(--fs-1), 4vw + 1rem, var(--fs-heading-2));
+  line-height: 1;
 }
 
 h3 {
-  font: normal normal var(--fw-bold) var(--fs-1)/2rem var(--ff-default);
+  font-size: clamp(var(--fs-2), 4vw + 1rem, var(--fs-1));
+  line-height: 2rem;
 }
 
 h4 {
-  font: normal normal var(--fw-bold) var(--fs-2)/2rem var(--ff-default);
+  font-size: clamp(var(--fs-3), 4vw + 1rem, var(--fs-2));
+  line-height: 2rem;
 }
 
 h5 {
-  font: normal normal var(--fw-bold) var(--fs-3)/2rem var(--ff-default);
+  font-size: clamp(var(--fs-4), 4vw + 1rem, var(--fs-3));
+  line-height: 2rem;
 }
 
 p {
@@ -81,6 +68,7 @@ p {
   padding-block: .25rem;
   padding-inline: .75rem;
   border-radius: 2rem;
+  width: fit-content;
 }
 
 .outlined_subtitle.red {
@@ -207,8 +195,6 @@ p {
 }
 
 /* ========== GENERAL STYLES ========== */
-
-
 .rounded_icon_container {
   display: flex;
   justify-content: center;
@@ -216,4 +202,18 @@ p {
   width: 40px;
   height: 40px;
   border-radius: 50%;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-0.5rem);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }

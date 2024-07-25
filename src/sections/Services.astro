@@ -4,26 +4,53 @@ import Service from "../components/Service.astro";
 import { servicesData } from "../constants/data.js";
 ---
 
-<section id="service">
-  {servicesData.map((service) => <Service services={service} />)}
+<section id="services" class="section_container">
+  <div class="services_text flex flex-col items-center text-center">
+    <span class="outlined_subtitle red">More Features</span>
+    <h2>We’re helping teams do their best work</h2>
+    <p>
+      Unlock your team's true potential with our state-of-the-art SaaS platform.
+      From intelligent task management to real-time collaboration and top-notch
+      data security, we have everything you need to streamline your workflows
+      and achieve high productivity.
+    </p>
+  </div>
+  <div class="services_content">
+    {servicesData.map((service) => <Service services={service} />)}
+  </div>
 </section>
 
 <style>
-  #service {
-    background-color: var(--clr-cultured);
+  #services .services_text {
+    gap: 1rem;
+    width: min(100%, 780px);
+    margin-inline: auto;
+  }
+
+  #services .services_content {
+    gap: 3rem;
     display: grid;
-    gap: 2rem;
+    margin-top: 5rem;
 
     @media screen and (min-width: 992px) {
       .services_section:nth-child(odd) article {
         order: 1;
       }
+
       .services_section:nth-child(even) article {
         margin-left: auto;
         ul {
           text-align: right;
         }
       }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    #services .services_text {
+      align-items: flex-start;
+      margin-inline: initial;
+      text-align: left;
     }
   }
 </style>

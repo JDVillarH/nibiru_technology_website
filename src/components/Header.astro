@@ -1,30 +1,8 @@
 ---
 import ChevronRight from "../icons/ChevronRight.astro";
 import HamburguerIcon from "../icons/HamburguerIcon.astro";
+import { navbarList } from "../constants/data.js";
 import Navbar from "./Navbar.astro";
-
-const navbarList = [
-  {
-    label: "Home",
-    link: "#",
-  },
-  {
-    label: "Features",
-    link: "#features",
-  },
-  {
-    label: "Services",
-    link: "#service",
-  },
-  {
-    label: "Blog",
-    link: "#blog",
-  },
-  {
-    label: "Newsletter",
-    link: "#newsletter",
-  },
-];
 ---
 
 <header class="header">
@@ -47,9 +25,10 @@ const navbarList = [
 
 <style>
   .header {
+    top: 0;
     width: 100%;
     z-index: 10;
-    position: fixed;
+    position: sticky;
     padding-block: 1.25rem;
     background-color: #fff;
     animation: header-shadown 1s linear both;
@@ -65,7 +44,7 @@ const navbarList = [
   .header .logo span:nth-child(2) {
     border-radius: 6px;
     padding: 0.2rem 0.5rem;
-    background-color: #e5e7eb;
+    background-color: var(--clr-slate-100);
     color: var(--clr-black-coral);
     font-weight: var(--fw-bold);
     transition: 0.2s ease-in-out;
@@ -82,7 +61,7 @@ const navbarList = [
       padding-block: 0.7rem;
       background-color: #fffc;
       box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
-      border-bottom: 1px solid #e5e7eb;
+      border-bottom: 1px solid var(--clr-slate-100);
       backdrop-filter: blur(16px);
     }
   }

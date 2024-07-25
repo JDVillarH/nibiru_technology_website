@@ -1,5 +1,6 @@
 ---
 import ChevronRight from "../icons/ChevronRight.astro";
+// import ArrowDown from "../icons/ArrowDown.astro";
 ---
 
 <section id="hero">
@@ -20,24 +21,35 @@ import ChevronRight from "../icons/ChevronRight.astro";
         </a>
       </div>
     </div>
-    <picture>
+    <figure>
       <img
-        src="/images/hero-banner.webp"
-        alt="Illustration art"
+        src="/images/building-product.svg"
+        alt="Ilustración creando sitio web"
         loading="lazy"
       />
-    </picture>
+    </figure>
   </div>
+
+  <!-- <ArrowDown class="arrow_down" /> -->
 </section>
 
 <style>
   #hero {
-    padding-top: 9rem;
-    background-color: var(--clr-cultured);
+    display: grid;
+  }
+
+  .arrow_down {
+    width: 2rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    color: var(--clr-red-crayola-300);
   }
 
   .hero_container {
-    gap: 2rem;
+    column-gap: 2rem;
+    row-gap: 5rem;
     display: grid;
     align-items: center;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr));
@@ -51,12 +63,14 @@ import ChevronRight from "../icons/ChevronRight.astro";
 
   .hero_container figure img {
     margin-inline: auto;
-    width: min(560px, 100%);
+    width: min(30rem, 100%);
+    /* animation: bounce linear 4s infinite; */
   }
 
   @media (max-width: 1024px) {
     #hero {
       text-align: center;
+      padding-top: 3rem;
     }
 
     .flex-group {

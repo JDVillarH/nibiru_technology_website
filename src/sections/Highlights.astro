@@ -57,21 +57,13 @@ import { advantages } from "../constants/data.js";
     gap: 0.5rem;
     display: grid;
     padding: 2rem;
-    background-color: #f9fafb;
-    border: 1px solid #e5e7eb;
+    background-color: var(--clr-slate-50);
+    border: 1px solid var(--clr-slate-100);
     border-radius: 1rem;
   }
 
-  .highlights__card_image {
-    position: relative;
-  }
-
-  .highlights__card_image::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: linear-gradient(to top, #f9fafb, #0000, #0000);
-    z-index: 5;
+  .highlights__card_image img {
+    mask-image: linear-gradient(black 60%, transparent);
   }
 
   .highlights__card_content.flow {
@@ -80,6 +72,7 @@ import { advantages } from "../constants/data.js";
 
   .highlights__card_content h5 {
     margin-block: 0.3rem 0.5rem;
+    font-weight: var(--fw-semibold);
   }
 
   .highlights__card_content p {
@@ -116,7 +109,7 @@ import { advantages } from "../constants/data.js";
 
     .highlights__card_image {
       position: relative;
-      height: 15dvw;
+      height: clamp(12rem, 15dvw + 1rem, 16rem);
       overflow: hidden;
 
       & img {

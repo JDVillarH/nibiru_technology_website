@@ -1,5 +1,28 @@
 import PinMapIcon from "../icons/PinMapIcon.astro";
 
+export const navbarList = [
+  {
+    label: "Inicio",
+    link: "#",
+  },
+  {
+    label: "Features",
+    link: "#features",
+  },
+  {
+    label: "Services",
+    link: "#services",
+  },
+  {
+    label: "Blog",
+    link: "#blog",
+  },
+  {
+    label: "Contacto",
+    link: "#newsletter",
+  },
+];
+
 export const features = [
   {
     icon: PinMapIcon,
@@ -79,7 +102,7 @@ export const advantages = [
 
 export const servicesData = [
   {
-    image: "/images/service.webp",
+    image: "/images/development.svg",
     subtitle: "Services We Offer",
     title:
       "Experience the Ultimate Boost in Productivity with Our Intuitive Platform",
@@ -91,7 +114,7 @@ export const servicesData = [
     ],
   },
   {
-    image: "/images/service.webp",
+    image: "/images/seo.svg",
     subtitle: "Our Services",
     title: "Best IT & technology service in your area",
     servicesList: [

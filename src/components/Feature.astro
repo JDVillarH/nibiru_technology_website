@@ -1,6 +1,4 @@
 ---
-import ChevronRight from "../icons/ChevronRight.astro";
-
 const { feature } = Astro.props;
 ---
 
@@ -18,6 +16,16 @@ const { feature } = Astro.props;
   .feature_card {
     gap: 1rem;
     padding: 1.25rem;
+    border: 1px solid transparent;
+    border-radius: 0.5rem;
+    flex: 1 1 min(100%, 18rem);
+    transition: all 0.2s ease-in-out;
+  }
+
+  .feature_card:hover {
+    background-color: #f8fafc;
+    border: 1px #f1f5f9 solid;
+    transition: all 0.2s ease-in-out;
   }
 
   .feature_card .feature_icon {

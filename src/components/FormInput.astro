@@ -1,0 +1,41 @@
+---
+const { placeholder, type, name } = Astro.props;
+---
+
+<label class="input_container">
+  <input type={type} name={name} required autocomplete="off" placeholder="" />
+  <span>{placeholder}</span>
+</label>
+
+<style>
+  .input_container {
+    cursor: text;
+    display: block;
+    position: relative;
+    border-radius: 6px;
+    padding: 1rem 0.75rem;
+    background-color: var(--clr-slate-100);
+  }
+
+  .input_container input {
+    color: var(--clr-black-coral);
+    font-size: var(--fs-5);
+  }
+
+  .input_container input:not(:placeholder-shown) ~ span {
+    top: -0.5rem;
+    left: 0.75rem;
+    font-size: var(--fs-small);
+    transition: 0.2s ease-in-out;
+  }
+
+  .input_container span {
+    top: 1rem;
+    left: 0.75rem;
+    position: absolute;
+    pointer-events: none;
+    font-size: var(--fs-5);
+    transition: 0.2s ease-in-out;
+    color: var(--clr-black-coral);
+  }
+</style>

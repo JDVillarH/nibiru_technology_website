@@ -54,7 +54,8 @@ address {
 }
 
 input,
-button {
+button,
+textarea {
     outline: none;
     border: none;
     background: none;
