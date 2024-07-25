@@ -8,12 +8,12 @@ const { subtitle, title, image, servicesList } = services;
 <div class="services_section section_container">
   <article>
     <span class="outlined_subtitle blue">{subtitle}</span>
-    <h3 class="h3">{title}</h3>
+    <h3>{title}</h3>
     <ul class="services_list">
       {
         servicesList.map((service: Text) => {
           return (
-            <li>
+            <li class="flex items-center">
               <div class="services__icon rounded_icon_container">
                 <CheckIcon />
               </div>
@@ -42,8 +42,6 @@ const { subtitle, title, image, servicesList } = services;
 
   .services_section .services_list li {
     gap: 0.5rem;
-    display: flex;
-    align-items: center;
     border-radius: 8px;
     font-size: var(--fs-5);
   }
@@ -56,13 +54,13 @@ const { subtitle, title, image, servicesList } = services;
   .services__icon {
     width: 30px;
     height: 30px;
-    background-color: var(--clr-white);
-    border: 1px solid var(--clr-red-crayola);
-    color: var(--clr-red-crayola);
+    background-color: #fff;
+    border: 1px solid var(--clr-red-crayola-600);
+    color: var(--clr-red-crayola-600);
   }
 
   .services__icon svg {
-    color: var(--clr-red-crayola);
+    color: var(--clr-red-crayola-600);
   }
 
   .services__icon,
@@ -71,6 +69,6 @@ const { subtitle, title, image, servicesList } = services;
   }
 
   ul li:hover .services__icon {
-    background-color: #ffe0e5;
+    background-color: var(--clr-red-crayola-100);
   }
 </style>

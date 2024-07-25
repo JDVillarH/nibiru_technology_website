@@ -5,7 +5,7 @@ const { navbarList } = Astro.props;
 ---
 
 <nav class="navbar">
-  <ul>
+  <ul class="flex">
     {
       navbarList.map((item) => (
         <li>
@@ -14,25 +14,25 @@ const { navbarList } = Astro.props;
       ))
     }
   </ul>
-  <a href="#" class="navbar_button button blue_button">
+  <a href="#" class="navbar_button button blue">
     Get Started <ChevronRight width={24} />
   </a>
 </nav>
 
 <style>
   ul {
-    display: flex;
     gap: 0.75rem;
   }
 
   ul li a {
     font-size: var(--fs-5);
+    color: var(--black-coral);
     transition: color 0.2s ease-in-out;
   }
 
   ul li a:hover {
     transition: color 0.2s ease-in-out;
-    color: var(--clr-red-crayola);
+    color: var(--clr-red-crayola-600);
   }
 
   .navbar_button {

@@ -29,11 +29,11 @@ const postsList = [
 ];
 ---
 
-<section id="blog" class="section_container">
-  <div class="blog_text">
+<section id="blog" class="section_container flex items-center flex-col">
+  <div class="blog_text flex flex-col items-center text-center">
     <span class="outlined_subtitle red">More Features</span>
-    <h2 class="h2">Our latest articles & resources</h2>
-    <p class="paragraph">
+    <h2>Our latest articles & resources</h2>
+    <p>
       Unlock your team's true potential with our state-of-the-art SaaS platform.
       From intelligent task management to real-time collaboration and top-notch
       data security, we have everything you need to streamline your workflows
@@ -46,17 +46,7 @@ const postsList = [
 </section>
 
 <style>
-  #blog {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
-
   #blog .blog_text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
     gap: 1rem;
     width: min(100%, 780px);
     margin-inline: auto;

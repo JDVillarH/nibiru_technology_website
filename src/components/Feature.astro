@@ -4,33 +4,31 @@ import ChevronRight from "../icons/ChevronRight.astro";
 const { feature } = Astro.props;
 ---
 
-<article class="feature_card">
-  <div class="feature_icon">
+<article class="feature_card flex items-start flex-col">
+  <div class="feature_icon flex">
     {(<feature.icon width="24" />)}
   </div>
   <div class="feature_text">
-    <h3 class="h3">{feature.title}</h3>
-    <p class="paragraph">{feature.description}</p>
+    <h5>{feature.title}</h5>
+    <p>{feature.description}</p>
   </div>
 </article>
 
 <style>
   .feature_card {
-    padding: 1.25rem;
     gap: 1rem;
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
+    padding: 1.25rem;
   }
+
   .feature_card .feature_icon {
-    background-color: #edf1ff;
     padding: 0.5rem;
     border-radius: 0.5rem;
-    border: 1px solid #dee6ff;
+    background-color: var(--clr-blue-ryb-50);
+    border: 1px solid var(--clr-blue-ryb-100);
   }
 
   .feature_card .feature_icon svg {
-    color: #595bfb;
+    color: var(--clr-blue-ryb-500);
   }
 
   .feature_card .feature_text {

@@ -15,7 +15,7 @@ import PhoneIcon from "../icons/PhoneIcon.astro";
           loading="lazy"
         />
       </a>
-      <p class="paragraph">
+      <p>
         Lorem ipsum dolor sit amet, consectetur, sed do eiusmod tempor
         incididunt ut labore et dolore magna aliqua minim.
       </p>
@@ -29,7 +29,7 @@ import PhoneIcon from "../icons/PhoneIcon.astro";
 
     <div class="quick_links">
       <h3>Quick links</h3>
-      <div class="paragraph">
+      <div>
         <ul>
           <li><a href="#">IT Startup</a></li>
           <li><a href="#">Software</a></li>
@@ -49,7 +49,7 @@ import PhoneIcon from "../icons/PhoneIcon.astro";
 
     <div class="contact_us">
       <h3>Contact with us</h3>
-      <ul class="paragraph">
+      <ul>
         <li>
           <div class="footer_icon rounded_icon_container">
             <EmailIcon width="20" />
@@ -89,19 +89,19 @@ import PhoneIcon from "../icons/PhoneIcon.astro";
   .footer_top {
     gap: 2rem;
     display: grid;
-    background-color: var(--clr-white);
+    background-color: #fff;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
 
     h3 {
       font-size: 1.4rem;
-      color: var(--clr-black);
+      color: #000;
     }
 
     .footer_icon {
       background-color: var(--clr-cultured);
 
       svg {
-        color: var(--clr-red-crayola);
+        color: var(--clr-red-crayola-600);
       }
     }
 
@@ -165,7 +165,7 @@ import PhoneIcon from "../icons/PhoneIcon.astro";
       align-items: center;
 
       p {
-        color: var(--clr-white);
+        color: #fff;
       }
 
       ul {
@@ -178,7 +178,7 @@ import PhoneIcon from "../icons/PhoneIcon.astro";
           background-color: hsla(0, 0%, 100%, 0.2);
 
           svg {
-            color: var(--clr-white);
+            color: #fff;
           }
         }
       }

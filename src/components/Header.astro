@@ -13,7 +13,7 @@ const navbarList = [
     link: "#features",
   },
   {
-    label: "Service",
+    label: "Services",
     link: "#service",
   },
   {
@@ -28,9 +28,9 @@ const navbarList = [
 ---
 
 <header class="header">
-  <div class="header_container section_container">
-    <div class="header_logo_container">
-      <a href="#">
+  <div class="section_container flex items-center justify-between">
+    <div class="logo_container flex items-center justify-between">
+      <a class="logo" href="#">
         <span>Nibiru</span>
         <span>Technology</span>
       </a>
@@ -39,7 +39,7 @@ const navbarList = [
 
     <Navbar navbarList={navbarList} />
 
-    <a href="#" class="header_button button blue_button">
+    <a href="#" class="header_button button blue">
       Get Started <ChevronRight width={20} />
     </a>
   </div>
@@ -47,26 +47,22 @@ const navbarList = [
 
 <style>
   .header {
-    z-index: 10;
     width: 100%;
+    z-index: 10;
     position: fixed;
     padding-block: 1.25rem;
-    background-color: var(--clr-white);
+    background-color: #fff;
+    animation: header-shadown 1s linear both;
+    animation-timeline: scroll();
+    animation-range: 0 100px;
   }
 
-  .header_container,
-  .header_logo_container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .header_logo_container a span:nth-child(1) {
+  .header .logo span:nth-child(1) {
     font-weight: var(--fw-bold);
-    color: var(--clr-red-crayola);
+    color: var(--clr-red-crayola-600);
   }
 
-  .header_logo_container a span:nth-child(2) {
+  .header .logo span:nth-child(2) {
     border-radius: 6px;
     padding: 0.2rem 0.5rem;
     background-color: #e5e7eb;
@@ -75,16 +71,10 @@ const navbarList = [
     transition: 0.2s ease-in-out;
   }
 
-  .header_logo_container a span:nth-child(2):hover {
-    background-color: var(--clr-red-crayola);
+  .header .logo_container a span:nth-child(2):hover {
+    background-color: var(--clr-red-crayola-600);
     transition: 0.2s ease-in-out;
-    color: var(--clr-white);
-  }
-
-  .header {
-    animation: header-shadown 1s linear both;
-    animation-timeline: scroll();
-    animation-range: 0 100px;
+    color: #fff;
   }
 
   @keyframes header-shadown {
@@ -98,11 +88,11 @@ const navbarList = [
   }
 
   @media screen and (max-width: 1024px) {
-    .header_container {
+    .header > div {
       flex-direction: column;
     }
 
-    .header_logo_container {
+    .header .logo_container {
       width: 100%;
     }
 

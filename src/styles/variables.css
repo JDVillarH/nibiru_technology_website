@@ -1,0 +1,50 @@
+:root {
+    /* Colors */
+    --clr-red-crayola-50: #ffeff1;
+    --clr-red-crayola-100: #ffe0e5;
+    --clr-red-crayola-200: #ffc6d2;
+    --clr-red-crayola-300: #ff97ad;
+    --clr-red-crayola-400: #ff5d83;
+    --clr-red-crayola-500: #ff245d;
+    --clr-red-crayola-600: #ff004c;
+    --clr-red-crayola-700: #d70040;
+    --clr-red-crayola-800: #b4003e;
+    --clr-red-crayola-900: #99023c;
+    --clr-red-crayola-950: #57001b;
+
+    --clr-blue-ryb-50: #edf1ff;
+    --clr-blue-ryb-100: #dee6ff;
+    --clr-blue-ryb-200: #c3cfff;
+    --clr-blue-ryb-300: #9fafff;
+    --clr-blue-ryb-400: #7984ff;
+    --clr-blue-ryb-500: #595bfb;
+    --clr-blue-ryb-600: #493df0;
+    --clr-blue-ryb-700: #3d2ed4;
+    --clr-blue-ryb-800: #3128ab;
+    --clr-blue-ryb-900: #2d2887;
+    --clr-blue-ryb-950: #1c184e;
+
+    /* Font - Weight */
+    --fw-thin: 100;
+    --fw-extra-light: 200;
+    --fw-light: 300;
+    --fw-regular: 400;
+    --fw-medium: 500;
+    --fw-semi-bold: 600;
+    --fw-bold: 700;
+    --fw-extra-bold: 800;
+    --fw-black: 900;
+
+    /* Font - Size */
+    --fs-heading-1: 3rem;
+    --fs-heading-2: 2.3rem;
+    --fs-1: 2rem;
+    --fs-2: 1.5rem;
+    --fs-3: 1.25rem;
+    --fs-4: 0.944rem;
+    --fs-5: 0.875rem;
+    --fs-small: 0.75rem;
+
+    /* Font - Family */
+    --ff-default: 'Poppins', sans-serif;
+}

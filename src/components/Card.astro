@@ -14,17 +14,17 @@ const { image, title, tags } = post;
   </figure>
 
   <div>
-    <ul>
-      <li>
+    <ul class="flex justify-between">
+      <li class="flex items-center">
         <TagIcon />
         <span>{tags.category}</span>
       </li>
-      <li>
+      <li class="flex items-center">
         <CalendarIcon />
         <span>{tags.date}</span>
       </li>
     </ul>
-    <a class="h3" target="_blank" rel="noopener noreferrer">{title}</a>
+    <a target="_blank" rel="noopener noreferrer">{title}</a>
   </div>
 </article>
 
@@ -56,24 +56,19 @@ const { image, title, tags } = post;
       padding: 1.2rem;
 
       ul {
-        display: flex;
-        justify-content: space-between;
-
         li {
-          display: flex;
-          align-items: center;
           gap: 4px;
         }
 
         svg {
           width: 1.3rem;
-          color: var(--clr-red-crayola);
+          color: var(--clr-red-crayola-600);
         }
       }
     }
 
     div a:hover {
-      color: var(--clr-red-crayola);
+      color: var(--clr-red-crayola-600);
     }
   }
 </style>
