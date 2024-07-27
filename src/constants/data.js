@@ -1,4 +1,9 @@
-import PinMapIcon from "../icons/PinMapIcon.astro";
+import ChartBar from "../icons/ChartBar.astro";
+import EditIcon from "../icons/EditIcon.astro";
+import FoldersIcon from "../icons/FoldersIcon.astro";
+import ToolsIcon from "../icons/ToolsIcon.astro";
+import UserQuestion from "../icons/UserQuestion.astro";
+import WorldIcon from "../icons/WorldIcon.astro";
 
 export const navbarList = [
   {
@@ -23,42 +28,42 @@ export const navbarList = [
   },
 ];
 
-export const features = [
+export const services = [
   {
-    icon: PinMapIcon,
-    title: "Zero Configuration",
+    icon: EditIcon,
+    title: "Gestor de contenidos (CMS)",
     description:
-      "Lorem ipsum dolor sit amet, conse ctetur adipiscing elit. Sed est non feugiat sagittis.",
+      "Actualización de contenidos de tu sitio web de forma sencilla y rápida para mantenerlo siempre al día.",
   },
   {
-    icon: PinMapIcon,
-    title: "Code Security",
+    icon: ChartBar,
+    title: "Encuestas",
     description:
-      "Lorem ipsum dolor sit amet, conse ctetur adipiscing elit. Sed est non feugiat sagittis.",
+      "Recolección y almacenamiento de datos en tiempo real para conocer las opiniones y necesidades de tus usuarios.",
   },
   {
-    icon: PinMapIcon,
-    title: "Team Management",
+    icon: FoldersIcon,
+    title: "Gestor de documentos",
     description:
-      "Lorem ipsum dolor sit amet, conse ctetur adipiscing elit. Sed est non feugiat sagittis.",
+      "Creación, clasificación, almacenamiento y eliminación de documentos y/o archivos multimedia en un solo lugar.",
   },
   {
-    icon: PinMapIcon,
-    title: "Access Controlled",
+    icon: WorldIcon,
+    title: "Landing Pages",
     description:
-      "Lorem ipsum dolor sit amet, conse ctetur adipiscing elit. Sed est non feugiat sagittis.",
+      "Diseño y desarrollo de páginas de aterrizaje para destacar tus productos, eventos o servicios.",
   },
   {
-    icon: PinMapIcon,
-    title: "Access Controlled",
+    icon: UserQuestion,
+    title: "PQRS y Turnos",
     description:
-      "Lorem ipsum dolor sit amet, conse ctetur adipiscing elit. Sed est non feugiat sagittis.",
+      "Sistematización del proceso de solicitudes, quejas, reclamos, sugerencias y gestión de turnos en línea."
   },
   {
-    icon: PinMapIcon,
-    title: "Access Controlled",
+    icon: ToolsIcon,
+    title: "Plataforma personalizada",
     description:
-      "Lorem ipsum dolor sit amet, conse ctetur adipiscing elit. Sed est non feugiat sagittis.",
+      "Desarrollo de plataformas web a la medida de tus necesidades y objetivos. Establece tus propias reglas y funcionalidades.",
   },
 ];
 
@@ -89,7 +94,7 @@ export const advantages = [
     tag: "Product",
     title: "Highlight Features",
     description:
-      "You can highlight your features in a trendy grid like this one.",
+      "You can highlight your services in a trendy grid like this one.",
   },
   {
     image: "/images/highlights-3.png",
@@ -100,16 +105,16 @@ export const advantages = [
   },
 ];
 
-export const servicesData = [
+export const featuresData = [
   {
     image: "/images/development.svg",
     subtitle: "Planificamos y desarrollamos",
     title:
       "Aumenta tu alcance en línea y potencia la experiencia móvil",
-    servicesList: [
+    featuresList: [
       "Dominio y alojamiento",
       "Diseño adaptable y moderno",
-      "Soporte multilingüe",
+      "Multi-idioma",
       "Formulario de contacto",
       "Google Maps y Recaptcha",
     ],
@@ -118,7 +123,7 @@ export const servicesData = [
     image: "/images/seo.svg",
     subtitle: "Optimizamos",
     title: "Mejora el rendimiento de tu web y aumenta tu visibilidad",
-    servicesList: [
+    featuresList: [
       "Contenido autogestionable",
       "Rediseño de sitios web",
       "Imágenes y media",

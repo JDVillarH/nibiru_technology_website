@@ -1,51 +1,79 @@
 ---
-const { feature } = Astro.props;
+import CheckIcon from "../icons/CheckIcon.astro";
+
+const { features } = Astro.props;
+const { subtitle, title, image, featuresList } = features;
 ---
 
-<article class="feature_card flex items-start flex-col">
-  <div class="feature_icon flex">
-    {(<feature.icon width="24" />)}
-  </div>
-  <div class="feature_text">
-    <h5>{feature.title}</h5>
-    <p>{feature.description}</p>
-  </div>
-</article>
+<div class="features_section section_container">
+  <article>
+    <span class="outlined_subtitle blue">{subtitle}</span>
+    <h3>{title}</h3>
+    <ul class="features_list">
+      {
+        featuresList.map((feature: Text) => {
+          return (
+            <li class="flex items-center">
+              <div class="features__icon rounded_icon_container">
+                <CheckIcon />
+              </div>
+              <p>{feature}</p>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </article>
+  <img src={image} alt={title} />
+</div>
 
 <style>
-  .feature_card {
-    gap: 1rem;
-    padding: 1.25rem;
-    border: 1px solid transparent;
-    border-radius: 0.5rem;
-    flex: 1 1 min(100%, 18rem);
-    transition: all 0.2s ease-in-out;
-  }
-
-  .feature_card:hover {
-    background-color: #f8fafc;
-    border: 1px #f1f5f9 solid;
-    transition: all 0.2s ease-in-out;
-  }
-
-  .feature_card .feature_icon {
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    background-color: var(--clr-blue-ryb-50);
-    border: 1px solid var(--clr-blue-ryb-100);
-  }
-
-  .feature_card .feature_icon svg {
-    color: var(--clr-blue-ryb-500);
-  }
-
-  .feature_card .feature_text {
+  .features_section {
+    gap: 4rem;
     display: grid;
-    gap: 0.5rem;
+    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
   }
 
-  .feature_card .feature_text p {
+  .features_section article h3 {
+    margin-block: 0.5rem 1rem;
+    font-size: 1.4rem;
+  }
+
+  .features_section .features_list li {
+    gap: 0.5rem;
+    border-radius: 8px;
     font-size: var(--fs-5);
-    line-height: 1.4rem;
+  }
+
+  .features_list {
+    display: grid;
+    row-gap: 0.5rem;
+  }
+
+  .features__icon {
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border: 1px solid var(--clr-red-crayola-600);
+    color: var(--clr-red-crayola-600);
+  }
+
+  .features__icon svg {
+    color: var(--clr-red-crayola-600);
+  }
+
+  .features__icon,
+  ul li:hover .features__icon {
+    transition: 0.2s ease;
+  }
+
+  ul li:hover .features__icon {
+    background-color: var(--clr-red-crayola-100);
+  }
+
+  .features_section img {
+    margin-inline: auto;
+    width: min(30rem, 100%);
   }
 </style>

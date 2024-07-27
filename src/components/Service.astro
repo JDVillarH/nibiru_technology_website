@@ -1,79 +1,46 @@
 ---
-import CheckIcon from "../icons/CheckIcon.astro";
-
-const { services } = Astro.props;
-const { subtitle, title, image, servicesList } = services;
+const { service } = Astro.props;
 ---
 
-<div class="services_section section_container">
-  <article>
-    <span class="outlined_subtitle blue">{subtitle}</span>
-    <h3>{title}</h3>
-    <ul class="services_list">
-      {
-        servicesList.map((service: Text) => {
-          return (
-            <li class="flex items-center">
-              <div class="services__icon rounded_icon_container">
-                <CheckIcon />
-              </div>
-              <p>{service}</p>
-            </li>
-          );
-        })
-      }
-    </ul>
-  </article>
-  <img src={image} alt={title} />
-</div>
+<article class="service_card flex items-start flex-col">
+  <div class="service_icon flex">
+    {(<service.icon width="24" />)}
+  </div>
+  <div class="service_text">
+    <h5>{service.title}</h5>
+    <p>{service.description}</p>
+  </div>
+</article>
 
 <style>
-  .services_section {
-    gap: 4rem;
-    display: grid;
-    align-items: center;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
-  }
-
-  .services_section article h3 {
-    margin-block: 1rem;
-    font-size: 1.4rem;
-  }
-
-  .services_section .services_list li {
+  .service_card {
     gap: 0.5rem;
-    border-radius: 8px;
+    padding: 1.25rem;
+    border: 1px solid transparent;
+    border-radius: 0.5rem;
+    flex: 1 1 min(100%, 18rem);
+    transition: all 0.2s ease-in-out;
+  }
+
+  .service_card:hover {
+    background-color: #f8fafc;
+    border: 1px #f1f5f9 solid;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .service_card .service_icon {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: var(--clr-blue-ryb-50);
+    border: 1px solid var(--clr-blue-ryb-100);
+  }
+
+  .service_card .service_icon svg {
+    color: var(--clr-blue-ryb-500);
+  }
+
+  .service_card .service_text p {
     font-size: var(--fs-5);
-  }
-
-  .services_list {
-    display: grid;
-    row-gap: 0.5rem;
-  }
-
-  .services__icon {
-    width: 30px;
-    height: 30px;
-    background-color: #fff;
-    border: 1px solid var(--clr-red-crayola-600);
-    color: var(--clr-red-crayola-600);
-  }
-
-  .services__icon svg {
-    color: var(--clr-red-crayola-600);
-  }
-
-  .services__icon,
-  ul li:hover .services__icon {
-    transition: 0.2s ease;
-  }
-
-  ul li:hover .services__icon {
-    background-color: var(--clr-red-crayola-100);
-  }
-
-  .services_section img {
-    margin-inline: auto;
-    width: min(30rem, 100%);
+    line-height: 1.4rem;
   }
 </style>
