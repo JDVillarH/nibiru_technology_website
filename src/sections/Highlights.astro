@@ -16,7 +16,7 @@ import { advantages } from "../constants/data.js";
           state-of-the-art tools and adds its own innovations.
         </p>
       </div>
-      <div class="highlights__card-container">
+      <div class="highlights__card-container linear_gradient_blue">
         {
           advantages.map((advantage) => {
             return (
@@ -60,6 +60,14 @@ import { advantages } from "../constants/data.js";
     background-color: var(--clr-slate-50);
     border: 1px solid var(--clr-slate-100);
     border-radius: 1rem;
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+      transition: 0.2s ease-in-out;
+      box-shadow:
+        0 10px 15px -3px #0000001a,
+        0 4px 6px -4px #0000001a;
+    }
   }
 
   .highlights__card_image img {

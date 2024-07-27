@@ -1,23 +1,23 @@
 ---
+import ArrowDown from "../icons/ArrowDown.astro";
 import ChevronRight from "../icons/ChevronRight.astro";
-// import ArrowDown from "../icons/ArrowDown.astro";
 ---
 
 <section id="hero">
   <div class="section_container hero_container">
     <div class="hero_content flex flex-col items-start">
-      <h1>Secure IT solutions for a more secure environment</h1>
+      <h1>Construye tu presencia en la web</h1>
       <p>
-        Velit hendrerit sit auctor tempor sem. Congue mi tempor condimentum
-        felis arcu, non cursus. Nulla pharetra porttitor sed platea arcu et leo
-        odio.
+        Te ayudamos a crear o rediseñar tu sitio web a la medida de tus
+        requerimientos. Desde blogs hasta webs corporativas, conversa con
+        nuestro equipo y comienza tu proyecto.
       </p>
       <div class="flex-group">
-        <a href="#" class="button red">
-          Get Started <ChevronRight width={24} />
+        <a href="#contact" class="button red">
+          Conversemos <ChevronRight width={24} />
         </a>
-        <a href="#" class="button red_outlined">
-          Get Started <ChevronRight width={24} />
+        <a href="#services" class="button red_outlined">
+          Conoce más <ChevronRight width={24} />
         </a>
       </div>
     </div>
@@ -30,12 +30,13 @@ import ChevronRight from "../icons/ChevronRight.astro";
     </figure>
   </div>
 
-  <!-- <ArrowDown class="arrow_down" /> -->
+  <a href="#services"><ArrowDown class="arrow_down" /></a>
 </section>
 
 <style>
   #hero {
     display: grid;
+    position: relative;
   }
 
   .arrow_down {
@@ -43,11 +44,14 @@ import ChevronRight from "../icons/ChevronRight.astro";
     position: absolute;
     left: 0;
     right: 0;
+    bottom: -4rem;
     margin-inline: auto;
     color: var(--clr-red-crayola-300);
+    animation: bounce linear 2s infinite;
   }
 
   .hero_container {
+    position: relative;
     column-gap: 2rem;
     row-gap: 5rem;
     display: grid;
@@ -64,7 +68,6 @@ import ChevronRight from "../icons/ChevronRight.astro";
   .hero_container figure img {
     margin-inline: auto;
     width: min(30rem, 100%);
-    /* animation: bounce linear 4s infinite; */
   }
 
   @media (max-width: 1024px) {

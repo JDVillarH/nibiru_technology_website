@@ -11,19 +11,23 @@ body {
   font: normal normal var(--fw-regular) var(--fs-4)/normal var(--ff-default);
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1279px) {
   html {
     font-size: 18px;
+  }
+
+  :root {
+    --section-space: 7rem;
   }
 }
 
 section {
-  padding-block: 7rem;
+  padding-block: var(--section-space);
 }
 
 h1 {
   font-size: clamp(var(--fs-heading-2), 4vw + 1rem, var(--fs-heading-1));
-  line-height: 1;
+  line-height: 1.1;
 }
 
 h2 {
@@ -52,6 +56,10 @@ p {
 }
 
 /* ========== UTILITY CLASS ========== */
+
+.hidden {
+  display: none !important;
+}
 
 .section_container {
   margin-inline: auto;
@@ -105,6 +113,10 @@ p {
       transform: translateX(0.25rem);
       transition: 0.2s ease-in-out;
     }
+  }
+
+  &:active {
+    scale: 0.95;
   }
 }
 
@@ -204,16 +216,38 @@ p {
   border-radius: 50%;
 }
 
+.linear_gradient_blue {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, var(--clr-blue-ryb-200) 100%, #fff 0%);
+    filter: blur(30px);
+    opacity: 0.1;
+    z-index: -1;
+  }
+}
+
 @keyframes bounce {
-  0% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
 
   50% {
     transform: translateY(-0.5rem);
   }
+}
 
-  100% {
-    transform: translateY(0);
+@keyframes fly {
+  from {
+    transform: translateY(.1rem);
+  }
+
+  to {
+    transform: translateY(-.1rem);
   }
 }

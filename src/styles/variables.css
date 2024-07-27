@@ -59,4 +59,7 @@
 
     /* Font - Family */
     --ff-default: 'Poppins', sans-serif;
+
+    /* Spacing */
+    --section-space: 5rem;
 }

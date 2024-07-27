@@ -6,12 +6,12 @@ export const navbarList = [
     link: "#",
   },
   {
-    label: "Features",
-    link: "#features",
+    label: "Servicios",
+    link: "#services",
   },
   {
-    label: "Services",
-    link: "#services",
+    label: "Carácteristicas",
+    link: "#features",
   },
   {
     label: "Blog",
@@ -19,7 +19,7 @@ export const navbarList = [
   },
   {
     label: "Contacto",
-    link: "#newsletter",
+    link: "#contact",
   },
 ];
 
@@ -103,25 +103,27 @@ export const advantages = [
 export const servicesData = [
   {
     image: "/images/development.svg",
-    subtitle: "Services We Offer",
+    subtitle: "Planificamos y desarrollamos",
     title:
-      "Experience the Ultimate Boost in Productivity with Our Intuitive Platform",
+      "Aumenta tu alcance en línea y potencia la experiencia móvil",
     servicesList: [
-      "Cloud Databases",
-      "Website Hosting",
-      "Remote Desktop",
-      "File Backup",
+      "Dominio y alojamiento",
+      "Diseño adaptable y moderno",
+      "Soporte multilingüe",
+      "Formulario de contacto",
+      "Google Maps y Recaptcha",
     ],
   },
   {
     image: "/images/seo.svg",
-    subtitle: "Our Services",
-    title: "Best IT & technology service in your area",
+    subtitle: "Optimizamos",
+    title: "Mejora el rendimiento de tu web y aumenta tu visibilidad",
     servicesList: [
-      "Design & Development",
-      "Android Apps Development",
-      "Laravel Web Development",
-      "React Web Development",
+      "Contenido autogestionable",
+      "Rediseño de sitios web",
+      "Imágenes y media",
+      "SEO y metadatos",
+      "Accesibilidad y velocidad",
     ],
   },
 ];

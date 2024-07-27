@@ -14,18 +14,23 @@ const { placeholder, type, name } = Astro.props;
     position: relative;
     border-radius: 6px;
     padding: 1rem 0.75rem;
-    background-color: var(--clr-slate-100);
+    border: 1px solid #cbd5e1;
+  }
+
+  .input_container:focus-within {
+    border-color: #000;
   }
 
   .input_container input {
-    color: var(--clr-black-coral);
+    color: #000;
     font-size: var(--fs-5);
+    width: 100%;
   }
 
   .input_container input:not(:placeholder-shown) ~ span {
-    top: -0.5rem;
+    top: 0.1rem;
     left: 0.75rem;
-    font-size: var(--fs-small);
+    font-size: 0.6rem;
     transition: 0.2s ease-in-out;
   }
 
