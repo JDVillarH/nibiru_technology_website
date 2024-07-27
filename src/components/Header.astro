@@ -29,7 +29,7 @@ import Navbar from "./Navbar.astro";
     width: 100%;
     z-index: 10;
     position: sticky;
-    padding-block: 1.25rem;
+    padding-block: 0.7rem;
     background-color: #fff;
     animation: header-shadown 1s linear both;
     animation-timeline: scroll();
@@ -58,7 +58,6 @@ import Navbar from "./Navbar.astro";
 
   @keyframes header-shadown {
     to {
-      padding-block: 0.7rem;
       background-color: #fffc;
       box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
       border-bottom: 1px solid var(--clr-slate-100);

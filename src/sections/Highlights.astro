@@ -22,7 +22,11 @@ import { advantages } from "../constants/data.js";
             return (
               <div class="highlights__card">
                 <div class="highlights__card_image">
-                  <img src={advantage.image} alt="highlight image" />
+                  <img
+                    src={advantage.image}
+                    alt="highlight image"
+                    loading="lazy"
+                  />
                 </div>
 
                 <div class="highlights__card_content">
