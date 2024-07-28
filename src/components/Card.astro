@@ -14,6 +14,7 @@ const { image, title, tags } = post;
   </figure>
 
   <div>
+    <a target="_blank" rel="noopener noreferrer">{title}</a>
     <ul class="flex justify-between">
       <li class="flex items-center">
         <TagIcon />
@@ -24,51 +25,57 @@ const { image, title, tags } = post;
         <span>{tags.date}</span>
       </li>
     </ul>
-    <a target="_blank" rel="noopener noreferrer">{title}</a>
   </div>
 </article>
 
 <style>
   article {
-    overflow: hidden;
-    border-radius: 12px;
-    transition: 0.35s ease-in-out;
-    box-shadow: 0 2px 25px 10px rgb(0 0 0 / 10%);
-
-    &:hover img {
-      transform: scale(1.1);
-    }
+    border-radius: 0.5rem;
+    box-shadow: 0.5rem 0.75rem 2rem rgb(0 0 0 / 10%);
 
     figure {
+      border-radius: inherit;
       overflow: hidden;
-    }
 
-    figure img,
-    figure:hover img,
-    div a,
-    div a:hover {
-      transition: 0.3s ease-in-out;
-    }
-
-    div {
-      gap: 1rem;
-      display: grid;
-      padding: 1.2rem;
-
-      ul {
-        li {
-          gap: 4px;
+      a {
+        img {
+          transition: 0.35s ease-in-out;
         }
 
-        svg {
-          width: 1.3rem;
-          color: var(--clr-red-crayola-600);
+        &:hover img {
+          transform: scale(1.1);
         }
       }
     }
 
-    div a:hover {
-      color: var(--clr-red-crayola-600);
+    div {
+      padding: 1rem;
+
+      a {
+        font-size: 1rem;
+        line-height: 1.5rem;
+      }
+
+      ul {
+        margin-top: 1rem;
+
+        li {
+          gap: 0.25rem;
+          color: var(--clr-slate-500);
+
+          &:hover svg {
+            color: var(--clr-red-crayola-600);
+          }
+
+          svg {
+            width: 1.25rem;
+          }
+
+          span {
+            font-size: 0.625rem;
+          }
+        }
+      }
     }
   }
 </style>
