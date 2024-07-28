@@ -8,7 +8,7 @@ import WorldIcon from "../icons/WorldIcon.astro";
 export const navbarList = [
   {
     label: "Inicio",
-    link: "#",
+    link: "#hero",
   },
   {
     label: "Servicios",
@@ -136,26 +136,32 @@ export const featuresData = [
 export const postsList = [
   {
     image: "/images/blog-1.jpg",
-    title: "How is technology working with new things?",
+    title: "¿Por qué es importante tener un sitio web?",
     tags: {
+      author: "Nibiru Technology",
       category: "Technology",
-      date: "25 Feb, 2022",
+      date: "20 Feb, 2024",
     },
+    link: "https://nibirutechnology.cl",
   },
   {
     image: "/images/blog-2.jpg",
-    title: "Top 10 important tips on IT services & design",
+    title: "Top 10 consejos importantes sobre servicios y diseño de IT",
     tags: {
+      author: "Nibiru Technology",
       category: "Design",
-      date: "25 Feb, 2022",
+      date: "23 Feb, 2024",
     },
+    link: "https://nibirutechnology.cl",
   },
   {
     image: "/images/blog-3.jpg",
-    title: "How our company works in different ways",
+    title: "La IA vino para quedarse ¿Cómo usarla para tu día a día?",
     tags: {
+      author: "Nibiru Technology",
       category: "Startup",
-      date: "25 Feb, 2022",
+      date: "25 Feb, 2024",
     },
+    link: "https://nibirutechnology.cl",
   },
 ];

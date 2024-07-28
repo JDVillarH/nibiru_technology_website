@@ -30,7 +30,9 @@ import ChevronRight from "../icons/ChevronRight.astro";
     </figure>
   </div>
 
-  <a href="#services"><ArrowDown class="arrow_down" /></a>
+  <a href="#services" aria-label="Ir a servicios" class="arrow_down_container">
+    <ArrowDown class="arrow_down" />
+  </a>
 </section>
 
 <style>
@@ -78,6 +80,10 @@ import ChevronRight from "../icons/ChevronRight.astro";
 
     .flex-group {
       margin-inline: auto;
+    }
+
+    .arrow_down_container {
+      display: none;
     }
   }
 </style>
