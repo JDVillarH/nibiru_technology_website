@@ -145,7 +145,7 @@ export const postsList = [
     link: "https://nibirutechnology.cl",
   },
   {
-    image: "/images/blog-2.jpg",
+    image: "/images/blog-1.jpg",
     title: "Top 10 consejos importantes sobre servicios y diseño de IT",
     tags: {
       author: "Nibiru Technology",
@@ -155,7 +155,7 @@ export const postsList = [
     link: "https://nibirutechnology.cl",
   },
   {
-    image: "/images/blog-3.jpg",
+    image: "/images/blog-1.jpg",
     title: "La IA vino para quedarse ¿Cómo usarla para tu día a día?",
     tags: {
       author: "Nibiru Technology",
