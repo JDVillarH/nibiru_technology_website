@@ -135,7 +135,7 @@ export const featuresData = [
 
 export const postsList = [
   {
-    image: "/images/blog-1.jpg",
+    image: "/images/blog-1.webp",
     title: "¿Por qué es importante tener un sitio web?",
     tags: {
       author: "Nibiru Technology",
@@ -145,7 +145,7 @@ export const postsList = [
     link: "https://nibirutechnology.cl",
   },
   {
-    image: "/images/blog-1.jpg",
+    image: "/images/blog-1.webp",
     title: "Top 10 consejos importantes sobre servicios y diseño de IT",
     tags: {
       author: "Nibiru Technology",
@@ -155,7 +155,7 @@ export const postsList = [
     link: "https://nibirutechnology.cl",
   },
   {
-    image: "/images/blog-1.jpg",
+    image: "/images/blog-1.webp",
     title: "La IA vino para quedarse ¿Cómo usarla para tu día a día?",
     tags: {
       author: "Nibiru Technology",
