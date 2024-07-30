@@ -49,6 +49,11 @@ h5 {
   line-height: 2rem;
 }
 
+.small_title {
+  font-size: clamp(var(--fs-4), 4vw + 1rem, var(--fs-3));
+  line-height: 2rem;
+}
+
 p {
   color: var(--clr-black-coral);
   font: normal normal var(--fw-regular) var(--fs-4)/1.75rem var(--ff-default);
